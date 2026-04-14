@@ -1,248 +1,203 @@
-import Anthropic from "@anthropic-ai/sdk";
-import { readFileSync, writeFileSync } from "fs";
-import { join } from "path";
-import { homedir } from "os";
+import { execFileSync } from "child_process";
 import { BrowserController } from "./browser.js";
-import { tools } from "./tools.js";
 
-// ── OAuth token management ────────────────────────────────────
+// ── Tool descriptions for the prompt ──────────────────────────
 
-const OAUTH_CLIENT_ID = "9d1c250a-e61b-44d9-88ed-5944d1962f5e";
-const TOKEN_URL = "https://console.anthropic.com/v1/oauth/token";
+const TOOLS_DESC = `Available tools (respond with JSON to use):
+- navigate: {"tool":"navigate","args":{"url":"..."}} — open a URL
+- click: {"tool":"click","args":{"element_id":N}} — click element by number
+- type_text: {"tool":"type_text","args":{"element_id":N,"text":"..."}} — type into input
+- press_key: {"tool":"press_key","args":{"key":"Enter"}} — press keyboard key
+- scroll: {"tool":"scroll","args":{"direction":"down"}} — scroll page
+- get_page_state: {"tool":"get_page_state","args":{}} — get current page elements
+- hover: {"tool":"hover","args":{"element_id":N}} — hover over element
+- go_back: {"tool":"go_back","args":{}} — browser back
+- wait: {"tool":"wait","args":{"ms":2000}} — wait
+- ask_user: {"tool":"ask_user","args":{"question":"..."}} — ask user a question
+- task_complete: {"tool":"task_complete","args":{"summary":"..."}} — finish task with results`;
 
-function credPath(): string {
-  return join(homedir(), ".claude", ".credentials.json");
-}
+const SYSTEM_PROMPT = `You are an autonomous browser agent. You control a real browser via tools.
 
-function readOAuth(): { accessToken: string; refreshToken: string; expiresAt: number } | null {
-  try {
-    const creds = JSON.parse(readFileSync(credPath(), "utf-8"));
-    const o = creds?.claudeAiOauth;
-    if (o?.accessToken && o?.refreshToken) return o;
-  } catch {}
-  return null;
-}
-
-async function refreshToken(): Promise<string | null> {
-  const oauth = readOAuth();
-  if (!oauth?.refreshToken) return null;
-  console.log("\x1b[36m[Auth] Refreshing token...\x1b[0m");
-  try {
-    const res = await fetch(TOKEN_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({
-        grant_type: "refresh_token",
-        client_id: OAUTH_CLIENT_ID,
-        refresh_token: oauth.refreshToken,
-      }),
-    });
-    if (!res.ok) {
-      console.log(`\x1b[31m[Auth] Refresh failed: ${res.status}\x1b[0m`);
-      return null;
-    }
-    const data = (await res.json()) as any;
-    const token = data.access_token;
-    if (!token) return null;
-    // Save back
-    try {
-      const creds = JSON.parse(readFileSync(credPath(), "utf-8"));
-      creds.claudeAiOauth.accessToken = token;
-      if (data.refresh_token) creds.claudeAiOauth.refreshToken = data.refresh_token;
-      if (data.expires_in) creds.claudeAiOauth.expiresAt = Date.now() + data.expires_in * 1000;
-      writeFileSync(credPath(), JSON.stringify(creds));
-    } catch {}
-    console.log("\x1b[32m[Auth] Token refreshed!\x1b[0m");
-    return token;
-  } catch (err: any) {
-    console.log(`\x1b[31m[Auth] ${err.message}\x1b[0m`);
-    return null;
-  }
-}
-
-// ── System prompt ─────────────────────────────────────────────
-
-const SYSTEM_PROMPT = `You are an autonomous browser automation agent. You control a real web browser via tools.
+${TOOLS_DESC}
 
 RULES:
-- ALWAYS use tools to interact with the browser. Never just describe what you see.
-- After navigate, page state is included — find input fields and buttons by their element numbers.
-- For search: use type_text on the search input, then press_key "Enter".
-- After any action that changes the page, call get_page_state to refresh element numbers.
-- When done, call task_complete with results.
-- Keep text responses SHORT (1 sentence). Focus on actions.
-- Respond in the user's language.
+1. On EVERY turn, respond with EXACTLY ONE JSON tool call. Nothing else.
+2. After navigate, page state is returned — find inputs by element numbers like [3], [10].
+3. For search: type_text into the search input, then press_key Enter.
+4. After actions that change the page, call get_page_state.
+5. When you have the answer, call task_complete with results.
+6. Respond in the user's language.
 
-TYPICAL FLOW: navigate → find search input in elements → type_text → press_key Enter → get_page_state → extract info → task_complete`;
+EXAMPLE:
+User: Find jobs on hh.ru
+You: {"tool":"navigate","args":{"url":"https://hh.ru"}}
+[tool result: page state with elements...]
+You: {"tool":"type_text","args":{"element_id":3,"text":"AI engineer"}}
+[tool result: typed]
+You: {"tool":"press_key","args":{"key":"Enter"}}
+[tool result: pressed]
+You: {"tool":"get_page_state","args":{}}
+[tool result: search results...]
+You: {"tool":"task_complete","args":{"summary":"Found 3 vacancies: ..."}}`;
 
 type AskUserFn = (question: string) => Promise<string>;
 
-// ── Agent ─────────────────────────────────────────────────────
-
 export class Agent {
-  private client: Anthropic;
   private browser: BrowserController;
-  private messages: Anthropic.MessageParam[] = [];
   private askUser: AskUserFn;
-  private model: string;
   private maxSteps: number;
+  private conversationFile: string | null = null;
 
   constructor(browser: BrowserController, askUser: AskUserFn) {
-    // Auth: ANTHROPIC_API_KEY > OAuth token from Claude subscription
-    let apiKey = process.env.ANTHROPIC_API_KEY;
-    const opts: ConstructorParameters<typeof Anthropic>[0] = {};
-
-    if (process.env.ANTHROPIC_BASE_URL) opts.baseURL = process.env.ANTHROPIC_BASE_URL;
-    if (process.env.ANTHROPIC_AUTH_TOKEN) apiKey = process.env.ANTHROPIC_AUTH_TOKEN;
-
-    if (!apiKey) {
-      const oauth = readOAuth();
-      if (oauth?.accessToken) {
-        apiKey = oauth.accessToken;
-        console.log("\x1b[36m[Auth] Using Claude subscription OAuth token.\x1b[0m");
-      }
-    }
-
-    if (apiKey) opts.apiKey = apiKey;
-    this.client = new Anthropic(opts);
     this.browser = browser;
     this.askUser = askUser;
-    this.model = process.env.CLAUDE_MODEL || "claude-sonnet-4-6";
-    this.maxSteps = parseInt(process.env.MAX_STEPS || "60", 10);
+    this.maxSteps = parseInt(process.env.MAX_STEPS || "40", 10);
   }
 
   async run(task: string): Promise<string> {
-    this.messages = [
-      { role: "user", content: task },
-    ];
-
-    // Refresh token if expired
-    const oauth = readOAuth();
-    if (oauth && Date.now() > (oauth.expiresAt || 0) - 60000) {
-      const fresh = await refreshToken();
-      if (fresh) this.client = new Anthropic({ apiKey: fresh });
-    }
-
     console.log("\x1b[36m[Agent] Starting...\x1b[0m");
 
+    let context = `${SYSTEM_PROMPT}\n\nUser task: ${task}\n\nRespond with a JSON tool call now.`;
+
     for (let step = 1; step <= this.maxSteps; step++) {
-      if (this.messages.length > 30) this.trimMessages();
       console.log(`\x1b[90m── step ${step}/${this.maxSteps} ──\x1b[0m`);
 
-      let response: Anthropic.Message;
+      // Call Claude CLI
+      let response: string;
       try {
-        response = await this.callAPI();
+        response = this.callClaude(context);
       } catch (err: any) {
         console.log(`\x1b[31m[Error] ${err.message?.substring(0, 120)}\x1b[0m`);
-        if (err?.status === 401) {
-          const fresh = await refreshToken();
-          if (fresh) { this.client = new Anthropic({ apiKey: fresh }); continue; }
-        }
         throw err;
       }
 
-      this.messages.push({ role: "assistant", content: response.content });
-
-      // Print text
-      for (const b of response.content) {
-        if (b.type === "text" && b.text.trim()) {
-          console.log(`\x1b[35m[Agent] ${b.text.substring(0, 300)}\x1b[0m`);
-        }
+      // Parse tool call from response
+      const toolCall = this.parseToolCall(response);
+      if (!toolCall) {
+        console.log(`\x1b[35m[Agent] ${response.substring(0, 300)}\x1b[0m`);
+        // Nudge to use tools
+        context += `\nAssistant: ${response}\nUser: You must respond with a JSON tool call. Use one of the tools listed above.`;
+        continue;
       }
 
-      if (response.stop_reason === "end_turn") {
-        return response.content
-          .filter((b): b is Anthropic.TextBlock => b.type === "text")
-          .map((b) => b.text)
-          .join("\n") || "(Done)";
+      const { tool, args } = toolCall;
+      console.log(`\x1b[33m  > ${tool}(${JSON.stringify(args).substring(0, 80)})\x1b[0m`);
+
+      // task_complete → done
+      if (tool === "task_complete") {
+        const summary = args.summary || "Done.";
+        console.log(`\x1b[32m[Done] ${summary}\x1b[0m`);
+        return summary;
       }
 
-      if (response.stop_reason !== "tool_use") return "(Stopped)";
-
-      // Execute tools
-      const toolResults: Anthropic.ToolResultBlockParam[] = [];
-      for (const tc of response.content.filter((b): b is Anthropic.ToolUseBlock => b.type === "tool_use")) {
-        const input = tc.input as Record<string, any>;
-        console.log(`\x1b[33m  > ${tc.name}(${JSON.stringify(input).substring(0, 80)})\x1b[0m`);
-
-        if (tc.name === "task_complete") {
-          console.log(`\x1b[32m[Done] ${input.summary}\x1b[0m`);
-          return input.summary;
-        }
-
-        if (tc.name === "ask_user") {
-          const answer = await this.askUser(input.question);
-          toolResults.push({ type: "tool_result", tool_use_id: tc.id, content: `User: ${answer}` });
-          continue;
-        }
-
-        const result = await this.executeTool(tc.name, input);
-        const content = result.length > 10000 ? result.substring(0, 10000) + "\n(truncated)" : result;
-        toolResults.push({ type: "tool_result", tool_use_id: tc.id, content });
-
-        const preview = result.substring(0, 100).replace(/\n/g, " ");
-        console.log(`\x1b[90m    ${preview}...\x1b[0m`);
+      // ask_user
+      if (tool === "ask_user") {
+        const answer = await this.askUser(args.question);
+        context += `\nAssistant: ${JSON.stringify(toolCall)}\nTool result: User answered: ${answer}\nRespond with next JSON tool call.`;
+        continue;
       }
 
-      this.messages.push({ role: "user", content: toolResults });
+      // Execute browser tool
+      const result = await this.executeTool(tool, args);
+      const truncated = result.length > 6000 ? result.substring(0, 6000) + "\n(truncated)" : result;
+
+      const preview = result.substring(0, 100).replace(/\n/g, " ");
+      console.log(`\x1b[90m    ${preview}...\x1b[0m`);
+
+      // Build next context
+      context += `\nAssistant: ${JSON.stringify(toolCall)}\nTool result: ${truncated}\nRespond with next JSON tool call.`;
+
+      // Trim context if too long (keep system prompt + last results)
+      if (context.length > 30000) {
+        const systemEnd = context.indexOf("\nUser task:");
+        const system = context.substring(0, systemEnd + 200);
+        const recent = context.substring(context.length - 15000);
+        context = system + "\n...(history trimmed)...\n" + recent;
+        console.log("\x1b[33m  [Trimmed context]\x1b[0m");
+      }
     }
 
     return `Max steps (${this.maxSteps}) reached.`;
   }
 
-  private async executeTool(name: string, input: Record<string, any>): Promise<string> {
+  private callClaude(prompt: string): string {
+    try {
+      const result = execFileSync("claude", ["-p", "--output-format", "text"], {
+        input: prompt,
+        encoding: "utf-8",
+        timeout: 120000,
+        maxBuffer: 10 * 1024 * 1024,
+      });
+      return result.trim();
+    } catch (err: any) {
+      if (err.stdout) return err.stdout.toString().trim();
+      throw err;
+    }
+  }
+
+  private parseToolCall(text: string): { tool: string; args: Record<string, any> } | null {
+    // Try to find JSON in the response
+    const patterns = [
+      /\{[\s]*"tool"[\s]*:[\s]*"[^"]+"/,  // starts with {"tool":"...
+    ];
+
+    for (const pattern of patterns) {
+      const match = text.match(pattern);
+      if (match) {
+        const start = match.index!;
+        // Find matching closing brace
+        let depth = 0;
+        for (let i = start; i < text.length; i++) {
+          if (text[i] === "{") depth++;
+          if (text[i] === "}") depth--;
+          if (depth === 0) {
+            try {
+              const json = JSON.parse(text.substring(start, i + 1));
+              if (json.tool) return json;
+            } catch {}
+            break;
+          }
+        }
+      }
+    }
+
+    // Try parsing entire response as JSON
+    try {
+      const json = JSON.parse(text.trim());
+      if (json.tool) return json;
+    } catch {}
+
+    // Try extracting from markdown code block
+    const codeBlock = text.match(/```(?:json)?\s*(\{[\s\S]*?\})\s*```/);
+    if (codeBlock) {
+      try {
+        const json = JSON.parse(codeBlock[1]);
+        if (json.tool) return json;
+      } catch {}
+    }
+
+    return null;
+  }
+
+  private async executeTool(name: string, args: Record<string, any>): Promise<string> {
     try {
       switch (name) {
-        case "navigate": return await this.browser.navigate(input.url);
-        case "click": return await this.browser.click(input.element_id);
-        case "hover": return await this.browser.hover(input.element_id);
-        case "type_text": return await this.browser.typeText(input.element_id, input.text, input.clear_first !== false);
-        case "press_key": return await this.browser.pressKey(input.key);
-        case "select_option": return await this.browser.selectOption(input.element_id, input.value);
-        case "scroll": return await this.browser.scroll(input.direction, input.amount || 600);
+        case "navigate": return await this.browser.navigate(args.url);
+        case "click": return await this.browser.click(args.element_id);
+        case "hover": return await this.browser.hover(args.element_id);
+        case "type_text": return await this.browser.typeText(args.element_id, args.text, args.clear_first !== false);
+        case "press_key": return await this.browser.pressKey(args.key);
+        case "select_option": return await this.browser.selectOption(args.element_id, args.value);
+        case "scroll": return await this.browser.scroll(args.direction, args.amount || 600);
         case "get_page_state": return await this.browser.getPageState();
-        case "screenshot": return await this.browser.screenshot();
+        case "screenshot": return "Use get_page_state instead for text content.";
         case "go_back": return await this.browser.goBack();
-        case "wait": return await this.browser.wait(input.ms || 2000);
-        case "switch_tab": return await this.browser.switchTab(input.tab_index);
+        case "wait": return await this.browser.wait(args.ms || 2000);
+        case "switch_tab": return await this.browser.switchTab(args.tab_index);
         default: return `Unknown tool: ${name}`;
       }
     } catch (err: any) {
       return `Error: ${err.message}`;
     }
-  }
-
-  private async callAPI(): Promise<Anthropic.Message> {
-    for (let attempt = 0; attempt < 8; attempt++) {
-      try {
-        return await this.client.messages.create({
-          model: this.model,
-          max_tokens: 4096,
-          system: SYSTEM_PROMPT,
-          tools,
-          messages: this.messages,
-        });
-      } catch (err: any) {
-        const s = err?.status;
-        if (s === 429 && attempt < 7) {
-          const delay = Math.min(5000 * Math.pow(2, attempt), 60000);
-          console.log(`\x1b[33m  [429] Retry in ${(delay / 1000).toFixed(0)}s...\x1b[0m`);
-          await new Promise((r) => setTimeout(r, delay));
-          continue;
-        }
-        if (s === 401 && attempt < 2) {
-          const fresh = await refreshToken();
-          if (fresh) { this.client = new Anthropic({ apiKey: fresh }); continue; }
-        }
-        throw err;
-      }
-    }
-    throw new Error("Max retries");
-  }
-
-  private trimMessages(): void {
-    const first = this.messages[0];
-    const recent = this.messages.slice(-20);
-    this.messages = [first, { role: "assistant", content: [{ type: "text", text: "(history trimmed)" }] }, ...recent];
   }
 }

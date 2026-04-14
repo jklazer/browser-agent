@@ -1,0 +1,5 @@
+[     864ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2:0
+[     867ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[     871ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
+[    1425ms] [LOG] Undefined event - vacancy_search_quality_anonymous @ https://cdn.uxfeedback.ru/assets-6.6.0/1.23c0db496cd90db6ed62.js:0
+[    1425ms] [LOG] Undefined event - vac_search_query_web @ https://cdn.uxfeedback.ru/assets-6.6.0/1.23c0db496cd90db6ed62.js:0

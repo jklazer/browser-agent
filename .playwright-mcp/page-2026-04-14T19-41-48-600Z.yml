@@ -1,0 +1,1992 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "перейти к поиску" [ref=e3] [cursor=pointer]:
+      - /url: "#a11y-search-input"
+    - link "перейти к основному контенту" [ref=e4] [cursor=pointer]:
+      - /url: "#a11y-main-content"
+  - generic [ref=e7]:
+    - generic [ref=e11]:
+      - generic [ref=e12]:
+        - text: Мы используем файлы cookie, чтобы обеспечивать правильную работу нашего веб-сайта и анализировать сетевой трафик.
+        - link "Правила использования файлов cookie" [ref=e13] [cursor=pointer]:
+          - /url: /article/cookie_policy?hhtmFrom=vacancy_search_list
+      - button "Понятно" [ref=e15] [cursor=pointer]
+    - generic [ref=e16]:
+      - generic [ref=e19]:
+        - link [ref=e20] [cursor=pointer]:
+          - /url: /?hhtmFrom=vacancy_search_list
+        - button "Ищу работу" [ref=e25]:
+          - generic [ref=e27]:
+            - text: Ищу работу
+            - img [ref=e30]
+        - generic [ref=e34]:
+          - button [ref=e36] [cursor=pointer]:
+            - img [ref=e43]
+          - group
+        - link "Войти" [ref=e49]:
+          - /url: /account/login?role=applicant&backurl=%2Fsearch%2Fvacancy%3Ftext%3DAI%2Bengineer%26area%3D1
+          - generic [ref=e51]: Войти
+        - button "navi-button-mobile" [ref=e53] [cursor=pointer]:
+          - img "navi-button-mobile" [ref=e57]
+      - separator [ref=e62]
+    - generic [ref=e66]:
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - generic [ref=e73]:
+            - generic [ref=e75]:
+              - generic:
+                - img
+              - combobox "Поиск по вакансиям" [ref=e77]: AI engineer
+            - button "Очистить" [ref=e83] [cursor=pointer]:
+              - img [ref=e85]
+          - group
+        - generic [ref=e87]:
+          - button "Расширенный поиск" [ref=e88] [cursor=pointer]:
+            - img "Расширенный поиск" [ref=e92]
+          - button "Сохранить поиск" [ref=e98] [cursor=pointer]:
+            - img "Сохранить поиск" [ref=e102]
+      - generic [ref=e107]:
+        - generic [ref=e111]:
+          - img [ref=e114]
+          - generic [ref=e119]: в Москве
+        - generic [ref=e120]:
+          - button "На карте" [ref=e122] [cursor=pointer]:
+            - generic [ref=e125]: На карте
+          - generic [ref=e126]:
+            - button [ref=e127] [cursor=pointer]:
+              - img [ref=e128]
+            - button [ref=e134] [cursor=pointer]:
+              - img [ref=e135]
+    - generic [ref=e145]:
+      - generic [ref=e146]:
+        - generic [ref=e148]:
+          - heading "Найдено 739 вакансий «AI engineer»" [level=1] [ref=e157]
+          - main [ref=e164]:
+            - generic [ref=e165]:
+              - 'button "Сейчас смотрят 5 человек CC++ разработчик от 120 000 ₽ за месяц, на руки Опыт 1-3 года Выплаты: два раза в месяц ООО ФАЙВДЖЕН 4.6 • 10 отзывов Москва Откликнуться" [ref=e169] [cursor=pointer]':
+                - generic [ref=e173]:
+                  - generic [ref=e174]:
+                    - generic [ref=e175]: Сейчас смотрят 5 человек
+                    - generic [ref=e177]:
+                      - link "CC++ разработчик" [ref=e180]:
+                        - /url: https://adsrv.hh.ru/click?b=2000169&place=35&meta=_i-H3aiKn9HW6WL2JRmRNRsLkQDcNs83Fom0s8v4WBqp2CGEyKUAdM__jIFLoc2alIB1KFnFwDVVdmYtskCr8Vk6F9qii1Oijoi9ozTHxHGn4OBuzM4kb5HrTn8ZEiNrhMieDzfGArddJOzOf35d2m_GRQzvzKZSHF1dZQVkH-15Egi8uBvBWdp_JrgR5MMJSvn3uPC7He9Ls0uVA4QUf8YwN0SyvWJvU5ZhhcEdhPFSrohf9mB8J370yvXqJghKtc3HmoOdhS7xNEbQpJCL61UHspZ5CEKHX14czUNpqwvfwWk4bwEcYTdi68Rd3TPdspyOMlSJ5FfI5Tq3GmIqIwN_p8WuvUA77Ev8ylzctIwNYnqiCgxTRtG1ia3GAx5qTMFCxVjKwghJtZXq_8h5CgTzsNYwfHCo-7bpPt0Ii6k17-bsTVMdYxvjeielk-w05WCgBiv3KDLaS1xHpkloAwA_St997puUmLyEJd2skSfMblUC4kacN2UuniXEpqA414aOjBCuy3aIlqMM-T-mmmEehxJL2xSgzI41C_G2c6TMf519lp6eWpqX3xKOEeVrmH5jf-QfOt-pfl7lLLxK01EUsDttcVFXmAlLsZJMQe_7s5h8DIB25s4eJyzlkdyxpnDpGa_QckEULUq9j_B1wbBzn2LUOL5pGeLI5Buhh7z4YmlEmL9f93F3ppTKanyJyo0BXNvAbiA-LU2YzSeAXlRw_CzhMgCSxXa5cCUm26M7cTQtwFil40L7RlGIjkSi-UlavO7HvxcFqcpj0HOZwpu8uyFYkGhg-FNR1WYfuZ0%3D&clickType=link_to_vacancy
+                        - generic [ref=e182]: CC++ разработчик
+                      - generic [ref=e184]:
+                        - generic [ref=e185]: от 120 000 ₽ за месяц, на руки
+                        - generic [ref=e187]:
+                          - generic [ref=e189]: Опыт 1-3 года
+                          - generic [ref=e192]: "Выплаты: два раза в месяц"
+                    - generic [ref=e194]:
+                      - link [ref=e197]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e199]
+                      - link "ООО ФАЙВДЖЕН" [ref=e205]:
+                        - /url: /employer/4938750?hhtmFrom=vacancy_search_list
+                        - generic [ref=e208]: ООО ФАЙВДЖЕН
+                      - generic [ref=e211]:
+                        - img [ref=e212]
+                        - generic [ref=e216]: "4.6"
+                        - generic [ref=e217]: •
+                        - generic [ref=e220]: 10 отзывов
+                      - generic [ref=e221]: Москва
+                  - button "Откликнуться" [ref=e227]:
+                    - generic [ref=e230]: Откликнуться
+              - generic [ref=e234]:
+                - button "Сейчас смотрят 4 человека Data Scientist (LLM / NLP) в команду B2C AI-Ассистента Опыт 3-6 лет Можно удалённо ООО HeadHunter::Analytics/Data Science 4.5 • 240 отзывов Москва ● Белорусская и еще 3 ● ● ● Откликнуться" [ref=e236] [cursor=pointer]:
+                  - generic [ref=e240]:
+                    - generic [ref=e241]:
+                      - generic [ref=e242]: Сейчас смотрят 4 человека
+                      - link "Data Scientist (LLM / NLP) в команду B2C AI-Ассистента" [ref=e245]:
+                        - /url: https://hh.ru/vacancy/132084420?query=AI+engineer&hhtmFrom=vacancy_search_list
+                        - generic [ref=e248]:
+                          - text: Data Scientist (LLM / NLP) в команду B2C AI-Ассистента
+                          - img [ref=e250]
+                      - generic [ref=e255]:
+                        - generic [ref=e257]: Опыт 3-6 лет
+                        - generic [ref=e259]: Можно удалённо
+                      - generic [ref=e261]:
+                        - generic [ref=e263]:
+                          - link [ref=e264]:
+                            - /url: https://feedback.hh.ru/article/details/id/5951
+                            - img [ref=e266]
+                          - img [ref=e274]
+                        - link "ООО HeadHunter::Analytics/Data Science" [ref=e282]:
+                          - /url: /employer/1455?dpt=hh-1455-ds&hhtmFrom=vacancy_search_list
+                          - generic [ref=e285]: ООО HeadHunter::Analytics/Data Science
+                        - generic [ref=e288]:
+                          - img [ref=e289]
+                          - generic [ref=e293]: "4.5"
+                          - generic [ref=e294]: •
+                          - generic [ref=e297]: 240 отзывов
+                        - generic [ref=e298]:
+                          - text: Москва
+                          - generic [ref=e301]:
+                            - generic [ref=e302]: ●
+                            - generic [ref=e303]: Белорусская
+                          - generic [ref=e304]: и еще 3
+                          - generic [ref=e306]: ●
+                          - generic [ref=e308]: ●
+                          - generic [ref=e310]: ●
+                    - button "Откликнуться" [ref=e315]:
+                      - generic [ref=e318]: Откликнуться
+                - link "Вакансии HeadHunter" [ref=e319] [cursor=pointer]:
+                  - /url: /employer/1455?dpt=hh-1455-ds&hhtmFrom=vacancy_search_list
+                  - img "branded logo" [ref=e322]
+              - generic [ref=e324]:
+                - generic [ref=e325]:
+                  - heading "Компании для вас" [level=3] [ref=e326]
+                  - button [ref=e329] [cursor=pointer]:
+                    - img [ref=e331]
+                - region [ref=e338]:
+                  - list [ref=e341]:
+                    - generic [ref=e343]:
+                      - listitem [ref=e344]:
+                        - button "СБЕР СБЕР 3583 активные вакансии Посмотреть" [ref=e345] [cursor=pointer]:
+                          - generic [ref=e349]:
+                            - generic "СБЕР" [ref=e353]:
+                              - img "СБЕР" [ref=e354]
+                            - generic [ref=e358]: СБЕР
+                            - generic [ref=e362]: 3583 активные вакансии
+                            - button "Посмотреть" [ref=e364]:
+                              - generic [ref=e367]: Посмотреть
+                      - listitem [ref=e368]:
+                        - button "585, Холдинг 585, Холдинг 99 активных вакансий Посмотреть" [ref=e369] [cursor=pointer]:
+                          - generic [ref=e373]:
+                            - generic "585, Холдинг" [ref=e377]:
+                              - img "585, Холдинг" [ref=e378]
+                            - generic [ref=e382]: 585, Холдинг
+                            - generic [ref=e386]: 99 активных вакансий
+                            - button "Посмотреть" [ref=e388]:
+                              - generic [ref=e391]: Посмотреть
+                      - listitem [ref=e392]:
+                        - button "HeadHunter HeadHunter 51 активная вакансия Посмотреть" [ref=e393] [cursor=pointer]:
+                          - generic [ref=e397]:
+                            - generic "HeadHunter" [ref=e401]:
+                              - img "HeadHunter" [ref=e402]
+                            - generic [ref=e406]: HeadHunter
+                            - generic [ref=e410]: 51 активная вакансия
+                            - button "Посмотреть" [ref=e412]:
+                              - generic [ref=e415]: Посмотреть
+                      - listitem [ref=e416]:
+                        - button "ЛУИС+ ЛУИС+ 32 активные вакансии Посмотреть" [ref=e417] [cursor=pointer]:
+                          - generic [ref=e421]:
+                            - generic "ЛУИС+" [ref=e425]:
+                              - img "ЛУИС+" [ref=e426]
+                            - generic [ref=e430]: ЛУИС+
+                            - generic [ref=e434]: 32 активные вакансии
+                            - button "Посмотреть" [ref=e436]:
+                              - generic [ref=e439]: Посмотреть
+                      - listitem [ref=e440]:
+                        - button "АЙФЭЛЛ АЙФЭЛЛ 10 активных вакансий Посмотреть" [ref=e441] [cursor=pointer]:
+                          - generic [ref=e445]:
+                            - generic "АЙФЭЛЛ" [ref=e449]:
+                              - img "АЙФЭЛЛ" [ref=e450]
+                            - generic [ref=e454]: АЙФЭЛЛ
+                            - generic [ref=e458]: 10 активных вакансий
+                            - button "Посмотреть" [ref=e460]:
+                              - generic [ref=e463]: Посмотреть
+                      - listitem [ref=e464]:
+                        - button "ФАЙВДЖЕН ФАЙВДЖЕН 5 активных вакансий Посмотреть" [ref=e465] [cursor=pointer]:
+                          - generic [ref=e469]:
+                            - generic "ФАЙВДЖЕН" [ref=e473]:
+                              - img "ФАЙВДЖЕН" [ref=e474]
+                            - generic [ref=e478]: ФАЙВДЖЕН
+                            - generic [ref=e482]: 5 активных вакансий
+                            - button "Посмотреть" [ref=e484]:
+                              - generic [ref=e487]: Посмотреть
+              - generic [ref=e495]:
+                - generic [ref=e496]:
+                  - generic [ref=e499]: По вашему запросу ещё будут появляться новые вакансии. Присылать вам?
+                  - generic [ref=e501]: AI engineer • Москва • Ключевые слова в названии вакансии, в названии компании и в описании вакансии
+                - generic [ref=e504]:
+                  - button "На почту" [ref=e506] [cursor=pointer]:
+                    - generic [ref=e509]: На почту
+                  - button "В мессенджер" [ref=e511] [cursor=pointer]:
+                    - generic [ref=e514]: В мессенджер
+              - button "Сейчас смотрят 2 человека Руководитель ИТ-проектов (ИИ направление) Опыт более 6 лет Вакансии ИК СИБИНТЕК ООО ИК СИБИНТЕК 3.5 • 1807 отзывов Москва ● Беговая Откликнуться" [ref=e518] [cursor=pointer]:
+                - generic [ref=e522]:
+                  - generic [ref=e523]:
+                    - generic [ref=e524]: Сейчас смотрят 2 человека
+                    - link "Руководитель ИТ-проектов (ИИ направление)" [ref=e527]:
+                      - /url: https://hh.ru/vacancy/131976586?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e530]:
+                        - text: Руководитель ИТ-проектов (ИИ направление)
+                        - img [ref=e532]
+                    - generic [ref=e539]: Опыт более 6 лет
+                    - generic [ref=e541]:
+                      - generic [ref=e543]:
+                        - link [ref=e544]:
+                          - /url: https://feedback.hh.ru/article/details/id/5951
+                          - img [ref=e546]
+                        - img [ref=e554]
+                      - link "Вакансии ИК СИБИНТЕК" [ref=e563]:
+                        - /url: /employer/197135?hhtmFrom=vacancy_search_list
+                        - img "ИК СИБИНТЕК" [ref=e565]
+                      - link "ООО ИК СИБИНТЕК" [ref=e566]:
+                        - /url: /employer/197135?hhtmFrom=vacancy_search_list
+                        - generic [ref=e569]: ООО ИК СИБИНТЕК
+                      - generic [ref=e572]:
+                        - img [ref=e573]
+                        - generic [ref=e577]: "3.5"
+                        - generic [ref=e578]: •
+                        - generic [ref=e581]: 1807 отзывов
+                      - generic [ref=e582]:
+                        - text: Москва
+                        - generic [ref=e585]:
+                          - generic [ref=e586]: ●
+                          - generic [ref=e587]: Беговая
+                  - button "Откликнуться" [ref=e592]:
+                    - generic [ref=e595]: Откликнуться
+              - button "Сейчас смотрят 4 человека Senior AI Engineer (LLMs & AI Agents) от 500 000 ₽ за месяц, на руки Опыт более 6 лет Можно удалённо Simplenight 1.8 • 2 отзыва Москва Откликнуться" [ref=e599] [cursor=pointer]:
+                - generic [ref=e603]:
+                  - generic [ref=e604]:
+                    - generic [ref=e605]: Сейчас смотрят 4 человека
+                    - link "Senior AI Engineer (LLMs & AI Agents)" [ref=e608]:
+                      - /url: https://hh.ru/vacancy/131963477?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e610]: Senior AI Engineer (LLMs & AI Agents)
+                    - generic [ref=e612]:
+                      - generic [ref=e613]: от 500 000 ₽ за месяц, на руки
+                      - generic [ref=e615]:
+                        - generic [ref=e617]: Опыт более 6 лет
+                        - generic [ref=e619]: Можно удалённо
+                    - generic [ref=e621]:
+                      - link [ref=e624]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e626]
+                      - link "Simplenight" [ref=e631]:
+                        - /url: /employer/10521060?hhtmFrom=vacancy_search_list
+                        - generic [ref=e633]: Simplenight
+                      - generic [ref=e636]:
+                        - img [ref=e637]
+                        - generic [ref=e641]: "1.8"
+                        - generic [ref=e642]: •
+                        - generic [ref=e645]: 2 отзыва
+                      - generic [ref=e646]: Москва
+                  - button "Откликнуться" [ref=e652]:
+                    - generic [ref=e655]: Откликнуться
+              - button "Сейчас смотрит 1 человек Middle AI-Engineer Опыт 3-6 лет Можно удалённо Вакансии Algonova Algonova 4.3 • 14 отзывов Москва Откликнуться" [ref=e659] [cursor=pointer]:
+                - generic [ref=e663]:
+                  - generic [ref=e664]:
+                    - generic [ref=e665]: Сейчас смотрит 1 человек
+                    - link "Middle AI-Engineer" [ref=e668]:
+                      - /url: https://hh.ru/vacancy/132108327?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e670]: Middle AI-Engineer
+                    - generic [ref=e673]:
+                      - generic [ref=e675]: Опыт 3-6 лет
+                      - generic [ref=e677]: Можно удалённо
+                    - generic [ref=e679]:
+                      - link [ref=e682]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e684]
+                      - link "Вакансии Algonova" [ref=e691]:
+                        - /url: /employer/11715370?hhtmFrom=vacancy_search_list
+                        - img "Algonova" [ref=e693]
+                      - link "Algonova" [ref=e694]:
+                        - /url: /employer/11715370?hhtmFrom=vacancy_search_list
+                        - generic [ref=e696]: Algonova
+                      - generic [ref=e699]:
+                        - img [ref=e700]
+                        - generic [ref=e704]: "4.3"
+                        - generic [ref=e705]: •
+                        - generic [ref=e708]: 14 отзывов
+                      - generic [ref=e709]: Москва
+                  - button "Откликнуться" [ref=e715]:
+                    - generic [ref=e718]: Откликнуться
+              - 'button "Сейчас смотрят 4 человека AI Engineer (International AI Brand) 5 000 – 7 000 $ за месяц, на руки Опыт более 6 лет Можно удалённо Выплаты: раз в месяц MT Lab Москва ● Ленинский проспект и еще 2 ● ● Откликнуться" [ref=e722] [cursor=pointer]':
+                - generic [ref=e726]:
+                  - generic [ref=e727]:
+                    - generic [ref=e728]: Сейчас смотрят 4 человека
+                    - link "AI Engineer (International AI Brand)" [ref=e731]:
+                      - /url: https://hh.ru/vacancy/131657596?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e733]: AI Engineer (International AI Brand)
+                    - generic [ref=e735]:
+                      - generic [ref=e736]: 5 000 – 7 000 $ за месяц, на руки
+                      - generic [ref=e738]:
+                        - generic [ref=e740]: Опыт более 6 лет
+                        - generic [ref=e742]: Можно удалённо
+                        - generic [ref=e745]: "Выплаты: раз в месяц"
+                    - generic [ref=e747]:
+                      - link [ref=e750]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e752]
+                      - link "MT Lab" [ref=e757]:
+                        - /url: /employer/11398039?hhtmFrom=vacancy_search_list
+                        - generic [ref=e759]: MT Lab
+                      - generic [ref=e760]:
+                        - text: Москва
+                        - generic [ref=e763]:
+                          - generic [ref=e764]: ●
+                          - generic [ref=e765]: Ленинский проспект
+                        - generic [ref=e766]: и еще 2
+                        - generic [ref=e768]: ●
+                        - generic [ref=e770]: ●
+                  - button "Откликнуться" [ref=e775]:
+                    - generic [ref=e778]: Откликнуться
+              - button "Сейчас смотрят 2 человека Senior AI Engineer (voice) Опыт 3-6 лет Можно удалённо evrone.ru 4.5 • 38 отзывов Москва Откликнуться" [ref=e784] [cursor=pointer]:
+                - generic [ref=e788]:
+                  - generic [ref=e789]:
+                    - generic [ref=e790]: Сейчас смотрят 2 человека
+                    - link "Senior AI Engineer (voice)" [ref=e793]:
+                      - /url: https://hh.ru/vacancy/130487084?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e795]: Senior AI Engineer (voice)
+                    - generic [ref=e798]:
+                      - generic [ref=e800]: Опыт 3-6 лет
+                      - generic [ref=e802]: Можно удалённо
+                    - generic [ref=e804]:
+                      - link [ref=e807]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e809]
+                      - link "evrone.ru" [ref=e814]:
+                        - /url: /employer/598471?hhtmFrom=vacancy_search_list
+                        - generic [ref=e816]: evrone.ru
+                      - generic [ref=e819]:
+                        - img [ref=e820]
+                        - generic [ref=e824]: "4.5"
+                        - generic [ref=e825]: •
+                        - generic [ref=e828]: 38 отзывов
+                      - generic [ref=e829]: Москва
+                  - button "Откликнуться" [ref=e835]:
+                    - generic [ref=e838]: Откликнуться
+              - button "Backend / Full-stack Engineer (Django + AI) Опыт 3-6 лет Можно удалённо ООО Симпл Вэй Групп Москва ● Воронцовская и еще 1 ● Откликнуться" [ref=e842] [cursor=pointer]:
+                - generic [ref=e846]:
+                  - generic [ref=e847]:
+                    - link "Backend / Full-stack Engineer (Django + AI)" [ref=e849]:
+                      - /url: https://hh.ru/vacancy/131679790?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e851]: Backend / Full-stack Engineer (Django + AI)
+                    - generic [ref=e854]:
+                      - generic [ref=e856]: Опыт 3-6 лет
+                      - generic [ref=e858]: Можно удалённо
+                    - generic [ref=e860]:
+                      - link [ref=e863]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e865]
+                      - link "ООО Симпл Вэй Групп" [ref=e870]:
+                        - /url: /employer/11169348?hhtmFrom=vacancy_search_list
+                        - generic [ref=e873]: ООО Симпл Вэй Групп
+                      - generic [ref=e874]:
+                        - text: Москва
+                        - generic [ref=e877]:
+                          - generic [ref=e878]: ●
+                          - generic [ref=e879]: Воронцовская
+                        - generic [ref=e880]: и еще 1
+                        - generic [ref=e882]: ●
+                  - button "Откликнуться" [ref=e887]:
+                    - generic [ref=e890]: Откликнуться
+              - 'button "ML Engineer 220 000 – 280 000 ₽ за месяц, на руки Опыт 3-6 лет Можно удалённо Выплаты: два раза в месяц Астор 4.8 • 1 отзыв Москва ● Сходненская и еще 2 ● ● Откликнуться" [ref=e894] [cursor=pointer]':
+                - generic [ref=e898]:
+                  - generic [ref=e899]:
+                    - link "ML Engineer" [ref=e901]:
+                      - /url: https://hh.ru/vacancy/131520640?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e903]: ML Engineer
+                    - generic [ref=e905]:
+                      - generic [ref=e906]: 220 000 – 280 000 ₽ за месяц, на руки
+                      - generic [ref=e908]:
+                        - generic [ref=e910]: Опыт 3-6 лет
+                        - generic [ref=e912]: Можно удалённо
+                        - generic [ref=e915]: "Выплаты: два раза в месяц"
+                    - generic [ref=e917]:
+                      - generic [ref=e919]:
+                        - link [ref=e920]:
+                          - /url: https://feedback.hh.ru/article/details/id/5951
+                          - img [ref=e922]
+                        - img [ref=e930]
+                      - link "Астор" [ref=e937]:
+                        - /url: /employer/606?hhtmFrom=vacancy_search_list
+                        - generic [ref=e939]: Астор
+                      - generic [ref=e942]:
+                        - img [ref=e943]
+                        - generic [ref=e947]: "4.8"
+                        - generic [ref=e948]: •
+                        - generic [ref=e951]: 1 отзыв
+                      - generic [ref=e952]:
+                        - text: Москва
+                        - generic [ref=e955]:
+                          - generic [ref=e956]: ●
+                          - generic [ref=e957]: Сходненская
+                        - generic [ref=e958]: и еще 2
+                        - generic [ref=e960]: ●
+                        - generic [ref=e962]: ●
+                  - button "Откликнуться" [ref=e967]:
+                    - generic [ref=e970]: Откликнуться
+              - 'button "Сейчас смотрят 3 человека Тестировщик Naimus.Ai до 160 000 ₽ за месяц, на руки Опыт 1-3 года Можно удалённо Выплаты: два раза в месяц Вакансии АЙФЭЛЛ ООО АЙФЭЛЛ 3.9 • 32 отзыва Москва Отклик без резюме Откликнуться Контакты" [ref=e974] [cursor=pointer]':
+                - generic [ref=e978]:
+                  - generic [ref=e979]:
+                    - generic [ref=e980]: Сейчас смотрят 3 человека
+                    - link "Тестировщик Naimus.Ai" [ref=e983]:
+                      - /url: https://hh.ru/vacancy/132130008?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e985]: Тестировщик Naimus.Ai
+                    - generic [ref=e987]:
+                      - generic [ref=e988]: до 160 000 ₽ за месяц, на руки
+                      - generic [ref=e990]:
+                        - generic [ref=e992]: Опыт 1-3 года
+                        - generic [ref=e994]: Можно удалённо
+                        - generic [ref=e997]: "Выплаты: два раза в месяц"
+                    - generic [ref=e999]:
+                      - link [ref=e1002]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e1004]
+                      - link "Вакансии АЙФЭЛЛ" [ref=e1011]:
+                        - /url: /employer/3646686?hhtmFrom=vacancy_search_list
+                        - img "АЙФЭЛЛ" [ref=e1013]
+                      - link "ООО АЙФЭЛЛ" [ref=e1014]:
+                        - /url: /employer/3646686?hhtmFrom=vacancy_search_list
+                        - generic [ref=e1017]: ООО АЙФЭЛЛ
+                      - generic [ref=e1020]:
+                        - img [ref=e1021]
+                        - generic [ref=e1025]: "3.9"
+                        - generic [ref=e1026]: •
+                        - generic [ref=e1029]: 32 отзыва
+                      - generic [ref=e1030]: Москва
+                    - generic [ref=e1036]: Отклик без резюме
+                  - generic [ref=e1040]:
+                    - button "Откликнуться" [ref=e1041]:
+                      - generic [ref=e1044]: Откликнуться
+                    - button "Контакты" [ref=e1046]:
+                      - generic [ref=e1049]: Контакты
+              - button "Сейчас смотрят 7 человек ML Engineer Опыт 3-6 лет Employcity 4.1 • 11 отзывов Москва ● Автозаводская и еще 3 ● ● ● Откликнуться" [ref=e1053] [cursor=pointer]:
+                - generic [ref=e1057]:
+                  - generic [ref=e1058]:
+                    - generic [ref=e1059]: Сейчас смотрят 7 человек
+                    - link "ML Engineer" [ref=e1062]:
+                      - /url: https://hh.ru/vacancy/132128026?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e1064]: ML Engineer
+                    - generic [ref=e1069]: Опыт 3-6 лет
+                    - generic [ref=e1071]:
+                      - link [ref=e1074]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e1076]
+                      - link "Employcity" [ref=e1081]:
+                        - /url: /employer/5846248?hhtmFrom=vacancy_search_list
+                        - generic [ref=e1083]: Employcity
+                      - generic [ref=e1086]:
+                        - img [ref=e1087]
+                        - generic [ref=e1091]: "4.1"
+                        - generic [ref=e1092]: •
+                        - generic [ref=e1095]: 11 отзывов
+                      - generic [ref=e1096]:
+                        - text: Москва
+                        - generic [ref=e1099]:
+                          - generic [ref=e1100]: ●
+                          - generic [ref=e1101]: Автозаводская
+                        - generic [ref=e1102]: и еще 3
+                        - generic [ref=e1104]: ●
+                        - generic [ref=e1106]: ●
+                        - generic [ref=e1108]: ●
+                  - button "Откликнуться" [ref=e1113]:
+                    - generic [ref=e1116]: Откликнуться
+              - button "Сейчас смотрит 1 человек Data Engineer Опыт 3-6 лет Цифровой аудит 4.4 • 8 отзывов Москва ● Добрынинская и еще 3 ● ● ● Откликнуться" [ref=e1120] [cursor=pointer]:
+                - generic [ref=e1124]:
+                  - generic [ref=e1125]:
+                    - generic [ref=e1126]: Сейчас смотрит 1 человек
+                    - link "Data Engineer" [ref=e1129]:
+                      - /url: https://hh.ru/vacancy/131668760?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e1131]: Data Engineer
+                    - generic [ref=e1136]: Опыт 3-6 лет
+                    - generic [ref=e1138]:
+                      - link [ref=e1141]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e1143]
+                      - link "Цифровой аудит" [ref=e1148]:
+                        - /url: /employer/11660779?hhtmFrom=vacancy_search_list
+                        - generic [ref=e1150]: Цифровой аудит
+                      - generic [ref=e1153]:
+                        - img [ref=e1154]
+                        - generic [ref=e1158]: "4.4"
+                        - generic [ref=e1159]: •
+                        - generic [ref=e1162]: 8 отзывов
+                      - generic [ref=e1163]:
+                        - text: Москва
+                        - generic [ref=e1166]:
+                          - generic [ref=e1167]: ●
+                          - generic [ref=e1168]: Добрынинская
+                        - generic [ref=e1169]: и еще 3
+                        - generic [ref=e1171]: ●
+                        - generic [ref=e1173]: ●
+                        - generic [ref=e1175]: ●
+                  - button "Откликнуться" [ref=e1180]:
+                    - generic [ref=e1183]: Откликнуться
+              - button "Сейчас смотрит 1 человек Data Engineer Опыт 3-6 лет Цифровой аудит 4.4 • 8 отзывов Москва ● Добрынинская и еще 1 ● Откликнуться" [ref=e1189] [cursor=pointer]:
+                - generic [ref=e1193]:
+                  - generic [ref=e1194]:
+                    - generic [ref=e1195]: Сейчас смотрит 1 человек
+                    - link "Data Engineer" [ref=e1198]:
+                      - /url: https://hh.ru/vacancy/131608662?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e1200]: Data Engineer
+                    - generic [ref=e1205]: Опыт 3-6 лет
+                    - generic [ref=e1207]:
+                      - link [ref=e1210]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e1212]
+                      - link "Цифровой аудит" [ref=e1217]:
+                        - /url: /employer/11660779?hhtmFrom=vacancy_search_list
+                        - generic [ref=e1219]: Цифровой аудит
+                      - generic [ref=e1222]:
+                        - img [ref=e1223]
+                        - generic [ref=e1227]: "4.4"
+                        - generic [ref=e1228]: •
+                        - generic [ref=e1231]: 8 отзывов
+                      - generic [ref=e1232]:
+                        - text: Москва
+                        - generic [ref=e1235]:
+                          - generic [ref=e1236]: ●
+                          - generic [ref=e1237]: Добрынинская
+                        - generic [ref=e1238]: и еще 1
+                        - generic [ref=e1240]: ●
+                  - button "Откликнуться" [ref=e1245]:
+                    - generic [ref=e1248]: Откликнуться
+              - button "Сейчас смотрят 2 человека AI наставник (Москва) Опыт более 6 лет Можно удалённо evrone.ru 4.5 • 38 отзывов Москва Откликнуться" [ref=e1252] [cursor=pointer]:
+                - generic [ref=e1256]:
+                  - generic [ref=e1257]:
+                    - generic [ref=e1258]: Сейчас смотрят 2 человека
+                    - link "AI наставник (Москва)" [ref=e1261]:
+                      - /url: https://hh.ru/vacancy/131512657?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e1263]: AI наставник (Москва)
+                    - generic [ref=e1266]:
+                      - generic [ref=e1268]: Опыт более 6 лет
+                      - generic [ref=e1270]: Можно удалённо
+                    - generic [ref=e1272]:
+                      - link [ref=e1275]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e1277]
+                      - link "evrone.ru" [ref=e1282]:
+                        - /url: /employer/598471?hhtmFrom=vacancy_search_list
+                        - generic [ref=e1284]: evrone.ru
+                      - generic [ref=e1287]:
+                        - img [ref=e1288]
+                        - generic [ref=e1292]: "4.5"
+                        - generic [ref=e1293]: •
+                        - generic [ref=e1296]: 38 отзывов
+                      - generic [ref=e1297]: Москва
+                  - button "Откликнуться" [ref=e1303]:
+                    - generic [ref=e1306]: Откликнуться
+              - button "Сейчас смотрят 2 человека Lead AI-engineer (AI-Агенты, Agent RecSys) Опыт 3-6 лет Вакансии Сбер. IT Сбер. IT 4.0 • 25847 отзывов Москва Откликнуться" [ref=e1310] [cursor=pointer]:
+                - generic [ref=e1314]:
+                  - generic [ref=e1315]:
+                    - generic [ref=e1316]: Сейчас смотрят 2 человека
+                    - link "Lead AI-engineer (AI-Агенты, Agent RecSys)" [ref=e1319]:
+                      - /url: https://hh.ru/vacancy/132096254?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e1321]: Lead AI-engineer (AI-Агенты, Agent RecSys)
+                    - generic [ref=e1326]: Опыт 3-6 лет
+                    - generic [ref=e1328]:
+                      - generic [ref=e1330]:
+                        - link [ref=e1331]:
+                          - /url: https://feedback.hh.ru/article/details/id/5951
+                          - img [ref=e1333]
+                        - link [ref=e1337]:
+                          - /url: http://hrbrand.ru/?utm_source=hh.ru&utm_medium=referral&utm_campaign=icon&utm_term=anonymous
+                          - img [ref=e1339]
+                      - link "Вакансии Сбер. IT" [ref=e1350]:
+                        - /url: /employer/3529?dpt=3529-3529-it&hhtmFrom=vacancy_search_list
+                        - img "Сбер. IT" [ref=e1352]
+                      - link "Сбер. IT" [ref=e1353]:
+                        - /url: /employer/3529?dpt=3529-3529-it&hhtmFrom=vacancy_search_list
+                        - generic [ref=e1355]: Сбер. IT
+                      - generic [ref=e1358]:
+                        - img [ref=e1359]
+                        - generic [ref=e1363]: "4.0"
+                        - generic [ref=e1364]: •
+                        - generic [ref=e1367]: 25847 отзывов
+                      - generic [ref=e1368]: Москва
+                  - button "Откликнуться" [ref=e1374]:
+                    - generic [ref=e1377]: Откликнуться
+              - button "Сейчас смотрят 2 человека Senior AI-engineer (AI-Агенты, Agent RecSys) Опыт 3-6 лет Вакансии Сбер. IT Сбер. IT 4.0 • 25847 отзывов Москва Откликнуться" [ref=e1381] [cursor=pointer]:
+                - generic [ref=e1385]:
+                  - generic [ref=e1386]:
+                    - generic [ref=e1387]: Сейчас смотрят 2 человека
+                    - link "Senior AI-engineer (AI-Агенты, Agent RecSys)" [ref=e1390]:
+                      - /url: https://hh.ru/vacancy/132095998?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e1392]: Senior AI-engineer (AI-Агенты, Agent RecSys)
+                    - generic [ref=e1397]: Опыт 3-6 лет
+                    - generic [ref=e1399]:
+                      - generic [ref=e1401]:
+                        - link [ref=e1402]:
+                          - /url: https://feedback.hh.ru/article/details/id/5951
+                          - img [ref=e1404]
+                        - link [ref=e1408]:
+                          - /url: http://hrbrand.ru/?utm_source=hh.ru&utm_medium=referral&utm_campaign=icon&utm_term=anonymous
+                          - img [ref=e1410]
+                      - link "Вакансии Сбер. IT" [ref=e1421]:
+                        - /url: /employer/3529?dpt=3529-3529-it&hhtmFrom=vacancy_search_list
+                        - img "Сбер. IT" [ref=e1423]
+                      - link "Сбер. IT" [ref=e1424]:
+                        - /url: /employer/3529?dpt=3529-3529-it&hhtmFrom=vacancy_search_list
+                        - generic [ref=e1426]: Сбер. IT
+                      - generic [ref=e1429]:
+                        - img [ref=e1430]
+                        - generic [ref=e1434]: "4.0"
+                        - generic [ref=e1435]: •
+                        - generic [ref=e1438]: 25847 отзывов
+                      - generic [ref=e1439]: Москва
+                  - button "Откликнуться" [ref=e1445]:
+                    - generic [ref=e1448]: Откликнуться
+              - 'button "Сейчас смотрит 1 человек Инженер технической поддержки (IP-телефония, голосовые роботы, AI) 50 000 – 80 000 ₽ за месяц, до вычета налогов Без опыта Выплаты: два раза в месяц ООО Гравител 3.9 • 9 отзывов Москва ● Павелецкая и еще 1 ● Откликнуться" [ref=e1452] [cursor=pointer]':
+                - generic [ref=e1456]:
+                  - generic [ref=e1457]:
+                    - generic [ref=e1458]: Сейчас смотрит 1 человек
+                    - link "Инженер технической поддержки (IP-телефония, голосовые роботы, AI)" [ref=e1461]:
+                      - /url: https://hh.ru/vacancy/131355702?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e1463]: Инженер технической поддержки (IP-телефония, голосовые роботы, AI)
+                    - generic [ref=e1465]:
+                      - generic [ref=e1466]: 50 000 – 80 000 ₽ за месяц, до вычета налогов
+                      - generic [ref=e1468]:
+                        - generic [ref=e1470]: Без опыта
+                        - generic [ref=e1473]: "Выплаты: два раза в месяц"
+                    - generic [ref=e1475]:
+                      - generic [ref=e1477]:
+                        - link [ref=e1478]:
+                          - /url: https://feedback.hh.ru/article/details/id/5951
+                          - img [ref=e1480]
+                        - img [ref=e1488]
+                      - link "ООО Гравител" [ref=e1495]:
+                        - /url: /employer/648042?hhtmFrom=vacancy_search_list
+                        - generic [ref=e1498]: ООО Гравител
+                      - generic [ref=e1501]:
+                        - img [ref=e1502]
+                        - generic [ref=e1506]: "3.9"
+                        - generic [ref=e1507]: •
+                        - generic [ref=e1510]: 9 отзывов
+                      - generic [ref=e1511]:
+                        - text: Москва
+                        - generic [ref=e1514]:
+                          - generic [ref=e1515]: ●
+                          - generic [ref=e1516]: Павелецкая
+                        - generic [ref=e1517]: и еще 1
+                        - generic [ref=e1519]: ●
+                  - button "Откликнуться" [ref=e1524]:
+                    - generic [ref=e1527]: Откликнуться
+              - button "Senior DevOps Engineer Опыт 3-6 лет Вакансии Сбер. IT Сбер. IT 4.0 • 25847 отзывов Москва Откликнуться" [ref=e1531] [cursor=pointer]:
+                - generic [ref=e1535]:
+                  - generic [ref=e1536]:
+                    - link "Senior DevOps Engineer" [ref=e1538]:
+                      - /url: https://hh.ru/vacancy/132120435?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e1540]: Senior DevOps Engineer
+                    - generic [ref=e1545]: Опыт 3-6 лет
+                    - generic [ref=e1547]:
+                      - generic [ref=e1549]:
+                        - link [ref=e1550]:
+                          - /url: https://feedback.hh.ru/article/details/id/5951
+                          - img [ref=e1552]
+                        - link [ref=e1556]:
+                          - /url: http://hrbrand.ru/?utm_source=hh.ru&utm_medium=referral&utm_campaign=icon&utm_term=anonymous
+                          - img [ref=e1558]
+                      - link "Вакансии Сбер. IT" [ref=e1569]:
+                        - /url: /employer/3529?dpt=3529-3529-it&hhtmFrom=vacancy_search_list
+                        - img "Сбер. IT" [ref=e1571]
+                      - link "Сбер. IT" [ref=e1572]:
+                        - /url: /employer/3529?dpt=3529-3529-it&hhtmFrom=vacancy_search_list
+                        - generic [ref=e1574]: Сбер. IT
+                      - generic [ref=e1577]:
+                        - img [ref=e1578]
+                        - generic [ref=e1582]: "4.0"
+                        - generic [ref=e1583]: •
+                        - generic [ref=e1586]: 25847 отзывов
+                      - generic [ref=e1587]: Москва
+                  - button "Откликнуться" [ref=e1593]:
+                    - generic [ref=e1596]: Откликнуться
+              - 'button "Сейчас смотрят 10 человек Fullstack AI engineer / программист (архитектор) 250 000 – 450 000 ₽ за месяц, на руки Опыт 3-6 лет Можно удалённо Выплаты: два раза в месяц ООО НООСФЕРА Москва Откликнуться" [ref=e1600] [cursor=pointer]':
+                - generic [ref=e1604]:
+                  - generic [ref=e1605]:
+                    - generic [ref=e1606]: Сейчас смотрят 10 человек
+                    - link "Fullstack AI engineer / программист (архитектор)" [ref=e1609]:
+                      - /url: https://hh.ru/vacancy/131986011?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e1611]: Fullstack AI engineer / программист (архитектор)
+                    - generic [ref=e1613]:
+                      - generic [ref=e1614]: 250 000 – 450 000 ₽ за месяц, на руки
+                      - generic [ref=e1616]:
+                        - generic [ref=e1618]: Опыт 3-6 лет
+                        - generic [ref=e1620]: Можно удалённо
+                        - generic [ref=e1623]: "Выплаты: два раза в месяц"
+                    - generic [ref=e1625]:
+                      - link [ref=e1628]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e1630]
+                      - link "ООО НООСФЕРА" [ref=e1635]:
+                        - /url: /employer/12574414?hhtmFrom=vacancy_search_list
+                        - generic [ref=e1638]: ООО НООСФЕРА
+                      - generic [ref=e1639]: Москва
+                  - button "Откликнуться" [ref=e1645]:
+                    - generic [ref=e1648]: Откликнуться
+              - button "Сейчас смотрят 6 человек AI-разработчик (Python) Junior / Middle Опыт 1-3 года Можно удалённо ООО СП Солюшен 4.7 • 3 отзыва Москва ● Верхние Котлы и еще 3 ● ● ● Откликнуться" [ref=e1652] [cursor=pointer]:
+                - generic [ref=e1656]:
+                  - generic [ref=e1657]:
+                    - generic [ref=e1658]: Сейчас смотрят 6 человек
+                    - link "AI-разработчик (Python) Junior / Middle" [ref=e1661]:
+                      - /url: https://hh.ru/vacancy/131673052?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e1663]: AI-разработчик (Python) Junior / Middle
+                    - generic [ref=e1666]:
+                      - generic [ref=e1668]: Опыт 1-3 года
+                      - generic [ref=e1670]: Можно удалённо
+                    - generic [ref=e1672]:
+                      - link [ref=e1675]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e1677]
+                      - link "ООО СП Солюшен" [ref=e1683]:
+                        - /url: /employer/11545313?hhtmFrom=vacancy_search_list
+                        - generic [ref=e1686]: ООО СП Солюшен
+                      - generic [ref=e1689]:
+                        - img [ref=e1690]
+                        - generic [ref=e1694]: "4.7"
+                        - generic [ref=e1695]: •
+                        - generic [ref=e1698]: 3 отзыва
+                      - generic [ref=e1699]:
+                        - text: Москва
+                        - generic [ref=e1702]:
+                          - generic [ref=e1703]: ●
+                          - generic [ref=e1704]: Верхние Котлы
+                        - generic [ref=e1705]: и еще 3
+                        - generic [ref=e1707]: ●
+                        - generic [ref=e1709]: ●
+                        - generic [ref=e1711]: ●
+                  - button "Откликнуться" [ref=e1716]:
+                    - generic [ref=e1719]: Откликнуться
+              - button "Сейчас смотрят 4 человека ML/AI Инженер Опыт 3-6 лет ООО Платформа Трим 4.1 • 13 отзывов Москва ● Савёловская Откликнуться" [ref=e1723] [cursor=pointer]:
+                - generic [ref=e1727]:
+                  - generic [ref=e1728]:
+                    - generic [ref=e1729]: Сейчас смотрят 4 человека
+                    - link "ML/AI Инженер" [ref=e1732]:
+                      - /url: https://hh.ru/vacancy/132093856?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e1734]: ML/AI Инженер
+                    - generic [ref=e1739]: Опыт 3-6 лет
+                    - generic [ref=e1741]:
+                      - link [ref=e1744]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e1746]
+                      - link "ООО Платформа Трим" [ref=e1752]:
+                        - /url: /employer/10553941?hhtmFrom=vacancy_search_list
+                        - generic [ref=e1755]: ООО Платформа Трим
+                      - generic [ref=e1758]:
+                        - img [ref=e1759]
+                        - generic [ref=e1763]: "4.1"
+                        - generic [ref=e1764]: •
+                        - generic [ref=e1767]: 13 отзывов
+                      - generic [ref=e1768]:
+                        - text: Москва
+                        - generic [ref=e1771]:
+                          - generic [ref=e1772]: ●
+                          - generic [ref=e1773]: Савёловская
+                  - button "Откликнуться" [ref=e1778]:
+                    - generic [ref=e1781]: Откликнуться
+              - button "Сейчас смотрят 2 человека LLM/RAG/AI Engineer (GigaChat Enterprise) Опыт 3-6 лет ООО Салют для Бизнеса 5.0 • 8 отзывов Москва ● Сретенский бульвар и еще 3 ● ● ● Откликнуться" [ref=e1785] [cursor=pointer]:
+                - generic [ref=e1789]:
+                  - generic [ref=e1790]:
+                    - generic [ref=e1791]: Сейчас смотрят 2 человека
+                    - link "LLM/RAG/AI Engineer (GigaChat Enterprise)" [ref=e1794]:
+                      - /url: https://hh.ru/vacancy/131928557?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e1796]: LLM/RAG/AI Engineer (GigaChat Enterprise)
+                    - generic [ref=e1801]: Опыт 3-6 лет
+                    - generic [ref=e1803]:
+                      - link [ref=e1806]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e1808]
+                      - link "ООО Салют для Бизнеса" [ref=e1814]:
+                        - /url: /employer/12084723?hhtmFrom=vacancy_search_list
+                        - generic [ref=e1817]: ООО Салют для Бизнеса
+                      - generic [ref=e1820]:
+                        - img [ref=e1821]
+                        - generic [ref=e1825]: "5.0"
+                        - generic [ref=e1826]: •
+                        - generic [ref=e1829]: 8 отзывов
+                      - generic [ref=e1830]:
+                        - text: Москва
+                        - generic [ref=e1833]:
+                          - generic [ref=e1834]: ●
+                          - generic [ref=e1835]: Сретенский бульвар
+                        - generic [ref=e1836]: и еще 3
+                        - generic [ref=e1838]: ●
+                        - generic [ref=e1840]: ●
+                        - generic [ref=e1842]: ●
+                  - button "Откликнуться" [ref=e1847]:
+                    - generic [ref=e1850]: Откликнуться
+              - button "Сейчас смотрят 2 человека Senior AI Product Manager (R&D AI Core) Опыт более 6 лет Можно удалённо Вакансии Algonova Algonova 4.3 • 14 отзывов Москва ● Библиотека им.Ленина и еще 3 ● ● ● Откликнуться" [ref=e1856] [cursor=pointer]:
+                - generic [ref=e1860]:
+                  - generic [ref=e1861]:
+                    - generic [ref=e1862]: Сейчас смотрят 2 человека
+                    - link "Senior AI Product Manager (R&D AI Core)" [ref=e1865]:
+                      - /url: https://hh.ru/vacancy/132116761?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e1867]: Senior AI Product Manager (R&D AI Core)
+                    - generic [ref=e1870]:
+                      - generic [ref=e1872]: Опыт более 6 лет
+                      - generic [ref=e1874]: Можно удалённо
+                    - generic [ref=e1876]:
+                      - link [ref=e1879]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e1881]
+                      - link "Вакансии Algonova" [ref=e1888]:
+                        - /url: /employer/11715370?hhtmFrom=vacancy_search_list
+                        - img "Algonova" [ref=e1890]
+                      - link "Algonova" [ref=e1891]:
+                        - /url: /employer/11715370?hhtmFrom=vacancy_search_list
+                        - generic [ref=e1893]: Algonova
+                      - generic [ref=e1896]:
+                        - img [ref=e1897]
+                        - generic [ref=e1901]: "4.3"
+                        - generic [ref=e1902]: •
+                        - generic [ref=e1905]: 14 отзывов
+                      - generic [ref=e1906]:
+                        - text: Москва
+                        - generic [ref=e1909]:
+                          - generic [ref=e1910]: ●
+                          - generic [ref=e1911]: Библиотека им.Ленина
+                        - generic [ref=e1912]: и еще 3
+                        - generic [ref=e1914]: ●
+                        - generic [ref=e1916]: ●
+                        - generic [ref=e1918]: ●
+                  - button "Откликнуться" [ref=e1923]:
+                    - generic [ref=e1926]: Откликнуться
+              - button "Сейчас смотрят 8 человек Senior Product Manager AI Опыт 3-6 лет Кадровое Агентство ОК Консалт Москва ● Зюзино и еще 3 ● ● ● Откликнуться" [ref=e1930] [cursor=pointer]:
+                - generic [ref=e1934]:
+                  - generic [ref=e1935]:
+                    - generic [ref=e1936]: Сейчас смотрят 8 человек
+                    - link "Senior Product Manager AI" [ref=e1939]:
+                      - /url: https://hh.ru/vacancy/132114217?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e1941]: Senior Product Manager AI
+                    - generic [ref=e1946]: Опыт 3-6 лет
+                    - generic [ref=e1948]:
+                      - link [ref=e1951]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e1953]
+                      - link "Кадровое Агентство ОК Консалт" [ref=e1958]:
+                        - /url: /employer/911016?hhtmFrom=vacancy_search_list
+                        - generic [ref=e1960]: Кадровое Агентство ОК Консалт
+                      - generic [ref=e1961]:
+                        - text: Москва
+                        - generic [ref=e1964]:
+                          - generic [ref=e1965]: ●
+                          - generic [ref=e1966]: Зюзино
+                        - generic [ref=e1967]: и еще 3
+                        - generic [ref=e1969]: ●
+                        - generic [ref=e1971]: ●
+                        - generic [ref=e1973]: ●
+                  - button "Откликнуться" [ref=e1978]:
+                    - generic [ref=e1981]: Откликнуться
+              - button "Сейчас смотрят 2 человека ML/LLM Engineer в AI Lab Опыт 3-6 лет Можно удалённо Вакансии HeadHunter::Analytics/Data Science ООО HeadHunter::Analytics/Data Science 4.5 • 240 отзывов Москва ● Белорусская и еще 3 ● ● ● Откликнуться" [ref=e1985] [cursor=pointer]:
+                - generic [ref=e1989]:
+                  - generic [ref=e1990]:
+                    - generic [ref=e1991]: Сейчас смотрят 2 человека
+                    - link "ML/LLM Engineer в AI Lab" [ref=e1994]:
+                      - /url: https://hh.ru/vacancy/131251209?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e1996]: ML/LLM Engineer в AI Lab
+                    - generic [ref=e1999]:
+                      - generic [ref=e2001]: Опыт 3-6 лет
+                      - generic [ref=e2003]: Можно удалённо
+                    - generic [ref=e2005]:
+                      - generic [ref=e2007]:
+                        - link [ref=e2008]:
+                          - /url: https://feedback.hh.ru/article/details/id/5951
+                          - img [ref=e2010]
+                        - img [ref=e2018]
+                      - link "Вакансии HeadHunter::Analytics/Data Science" [ref=e2028]:
+                        - /url: /employer/1455?dpt=hh-1455-ds&hhtmFrom=vacancy_search_list
+                        - img "HeadHunter::Analytics/Data Science" [ref=e2030]
+                      - link "ООО HeadHunter::Analytics/Data Science" [ref=e2031]:
+                        - /url: /employer/1455?dpt=hh-1455-ds&hhtmFrom=vacancy_search_list
+                        - generic [ref=e2034]: ООО HeadHunter::Analytics/Data Science
+                      - generic [ref=e2037]:
+                        - img [ref=e2038]
+                        - generic [ref=e2042]: "4.5"
+                        - generic [ref=e2043]: •
+                        - generic [ref=e2046]: 240 отзывов
+                      - generic [ref=e2047]:
+                        - text: Москва
+                        - generic [ref=e2050]:
+                          - generic [ref=e2051]: ●
+                          - generic [ref=e2052]: Белорусская
+                        - generic [ref=e2053]: и еще 3
+                        - generic [ref=e2055]: ●
+                        - generic [ref=e2057]: ●
+                        - generic [ref=e2059]: ●
+                  - button "Откликнуться" [ref=e2064]:
+                    - generic [ref=e2067]: Откликнуться
+              - 'button "AI Engineer / Специалист по AI‑агентам / Инженер промптов 120 000 – 150 000 ₽ за месяц, на руки Опыт 1-3 года Можно удалённо Выплаты: два раза в месяц Манн-Рудницкая Екатерина Геннадьевна Москва Откликнуться Контакты" [ref=e2071] [cursor=pointer]':
+                - generic [ref=e2075]:
+                  - generic [ref=e2076]:
+                    - link "AI Engineer / Специалист по AI‑агентам / Инженер промптов" [ref=e2078]:
+                      - /url: https://hh.ru/vacancy/131466949?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e2080]: AI Engineer / Специалист по AI‑агентам / Инженер промптов
+                    - generic [ref=e2082]:
+                      - generic [ref=e2083]: 120 000 – 150 000 ₽ за месяц, на руки
+                      - generic [ref=e2085]:
+                        - generic [ref=e2087]: Опыт 1-3 года
+                        - generic [ref=e2089]: Можно удалённо
+                        - generic [ref=e2092]: "Выплаты: два раза в месяц"
+                    - generic [ref=e2094]:
+                      - link [ref=e2097]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e2099]
+                      - link "Манн-Рудницкая Екатерина Геннадьевна" [ref=e2104]:
+                        - /url: /employer/11156044?hhtmFrom=vacancy_search_list
+                        - generic [ref=e2106]: Манн-Рудницкая Екатерина Геннадьевна
+                      - generic [ref=e2107]: Москва
+                  - generic [ref=e2112]:
+                    - button "Откликнуться" [ref=e2113]:
+                      - generic [ref=e2116]: Откликнуться
+                    - button "Контакты" [ref=e2118]:
+                      - generic [ref=e2121]: Контакты
+              - button "Сейчас смотрят 12 человек AI/Prompt инженер Опыт 1-3 года Можно удалённо Вакансии ЛУИС+ ООО ЛУИС+ 4.2 • 129 отзывов Москва ● Белорусская и еще 2 ● ● Откликнуться Контакты" [ref=e2125] [cursor=pointer]:
+                - generic [ref=e2129]:
+                  - generic [ref=e2130]:
+                    - generic [ref=e2131]: Сейчас смотрят 12 человек
+                    - link "AI/Prompt инженер" [ref=e2134]:
+                      - /url: https://hh.ru/vacancy/132084417?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e2136]: AI/Prompt инженер
+                    - generic [ref=e2139]:
+                      - generic [ref=e2141]: Опыт 1-3 года
+                      - generic [ref=e2143]: Можно удалённо
+                    - generic [ref=e2145]:
+                      - link [ref=e2148]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e2150]
+                      - link "Вакансии ЛУИС+" [ref=e2158]:
+                        - /url: /employer/49817?hhtmFrom=vacancy_search_list
+                        - img "ЛУИС+" [ref=e2160]
+                      - link "ООО ЛУИС+" [ref=e2161]:
+                        - /url: /employer/49817?hhtmFrom=vacancy_search_list
+                        - generic [ref=e2164]: ООО ЛУИС+
+                      - generic [ref=e2167]:
+                        - img [ref=e2168]
+                        - generic [ref=e2172]: "4.2"
+                        - generic [ref=e2173]: •
+                        - generic [ref=e2176]: 129 отзывов
+                      - generic [ref=e2177]:
+                        - text: Москва
+                        - generic [ref=e2180]:
+                          - generic [ref=e2181]: ●
+                          - generic [ref=e2182]: Белорусская
+                        - generic [ref=e2183]: и еще 2
+                        - generic [ref=e2185]: ●
+                        - generic [ref=e2187]: ●
+                  - generic [ref=e2191]:
+                    - button "Откликнуться" [ref=e2192]:
+                      - generic [ref=e2195]: Откликнуться
+                    - button "Контакты" [ref=e2197]:
+                      - generic [ref=e2200]: Контакты
+              - button "Сейчас смотрит 1 человек Team lead embedded engineer Опыт 3-6 лет ООО КОНТРОЛ+ 4.4 • 9 отзывов Москва ● Измайлово и еще 3 ● ● ● Откликнуться" [ref=e2204] [cursor=pointer]:
+                - generic [ref=e2208]:
+                  - generic [ref=e2209]:
+                    - generic [ref=e2210]: Сейчас смотрит 1 человек
+                    - link "Team lead embedded engineer" [ref=e2213]:
+                      - /url: https://hh.ru/vacancy/131508020?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e2215]: Team lead embedded engineer
+                    - generic [ref=e2220]: Опыт 3-6 лет
+                    - generic [ref=e2222]:
+                      - generic [ref=e2224]:
+                        - link [ref=e2225]:
+                          - /url: https://feedback.hh.ru/article/details/id/5951
+                          - img [ref=e2227]
+                        - img [ref=e2235]
+                      - link "ООО КОНТРОЛ+" [ref=e2242]:
+                        - /url: /employer/9614624?hhtmFrom=vacancy_search_list
+                        - generic [ref=e2245]: ООО КОНТРОЛ+
+                      - generic [ref=e2248]:
+                        - img [ref=e2249]
+                        - generic [ref=e2253]: "4.4"
+                        - generic [ref=e2254]: •
+                        - generic [ref=e2257]: 9 отзывов
+                      - generic [ref=e2258]:
+                        - text: Москва
+                        - generic [ref=e2261]:
+                          - generic [ref=e2262]: ●
+                          - generic [ref=e2263]: Измайлово
+                        - generic [ref=e2264]: и еще 3
+                        - generic [ref=e2266]: ●
+                        - generic [ref=e2268]: ●
+                        - generic [ref=e2270]: ●
+                  - button "Откликнуться" [ref=e2275]:
+                    - generic [ref=e2278]: Откликнуться
+              - button "Сейчас смотрят 4 человека Senior Machine Learning Engineer Опыт 3-6 лет Можно удалённо GetMeGit Москва Откликнуться" [ref=e2282] [cursor=pointer]:
+                - generic [ref=e2286]:
+                  - generic [ref=e2287]:
+                    - generic [ref=e2288]: Сейчас смотрят 4 человека
+                    - link "Senior Machine Learning Engineer" [ref=e2291]:
+                      - /url: https://hh.ru/vacancy/132121582?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e2293]: Senior Machine Learning Engineer
+                    - generic [ref=e2296]:
+                      - generic [ref=e2298]: Опыт 3-6 лет
+                      - generic [ref=e2300]: Можно удалённо
+                    - generic [ref=e2302]:
+                      - link [ref=e2305]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e2307]
+                      - link "GetMeGit" [ref=e2313]:
+                        - /url: /employer/8983371?hhtmFrom=vacancy_search_list
+                        - generic [ref=e2315]: GetMeGit
+                      - generic [ref=e2316]: Москва
+                  - button "Откликнуться" [ref=e2322]:
+                    - generic [ref=e2325]: Откликнуться
+              - 'button "Сейчас смотрят 3 человека AI инженер RnD 250 000 ₽ за месяц, на руки Без опыта Выплаты: раз в месяц ООО РегионСтройКомплект Москва ● Спартак и еще 3 ● ● ● Откликнуться" [ref=e2329] [cursor=pointer]':
+                - generic [ref=e2333]:
+                  - generic [ref=e2334]:
+                    - generic [ref=e2335]: Сейчас смотрят 3 человека
+                    - link "AI инженер RnD" [ref=e2338]:
+                      - /url: https://hh.ru/vacancy/131307537?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e2340]: AI инженер RnD
+                    - generic [ref=e2342]:
+                      - generic [ref=e2343]: 250 000 ₽ за месяц, на руки
+                      - generic [ref=e2345]:
+                        - generic [ref=e2347]: Без опыта
+                        - generic [ref=e2350]: "Выплаты: раз в месяц"
+                    - generic [ref=e2352]:
+                      - link [ref=e2355]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e2357]
+                      - link "ООО РегионСтройКомплект" [ref=e2362]:
+                        - /url: /employer/12536271?hhtmFrom=vacancy_search_list
+                        - generic [ref=e2365]: ООО РегионСтройКомплект
+                      - generic [ref=e2366]:
+                        - text: Москва
+                        - generic [ref=e2369]:
+                          - generic [ref=e2370]: ●
+                          - generic [ref=e2371]: Спартак
+                        - generic [ref=e2372]: и еще 3
+                        - generic [ref=e2374]: ●
+                        - generic [ref=e2376]: ●
+                        - generic [ref=e2378]: ●
+                  - button "Откликнуться" [ref=e2383]:
+                    - generic [ref=e2386]: Откликнуться
+              - button "Сейчас смотрят 3 человека QA Engineer (API / Playwright / TypeScript) Опыт 3-6 лет Можно удалённо ООО Амбрелла Москва ● Автозаводская и еще 1 ● Откликнуться Контакты" [ref=e2390] [cursor=pointer]:
+                - generic [ref=e2394]:
+                  - generic [ref=e2395]:
+                    - generic [ref=e2396]: Сейчас смотрят 3 человека
+                    - link "QA Engineer (API / Playwright / TypeScript)" [ref=e2399]:
+                      - /url: https://hh.ru/vacancy/131792487?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e2401]: QA Engineer (API / Playwright / TypeScript)
+                    - generic [ref=e2404]:
+                      - generic [ref=e2406]: Опыт 3-6 лет
+                      - generic [ref=e2408]: Можно удалённо
+                    - generic [ref=e2410]:
+                      - link [ref=e2413]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e2415]
+                      - link "ООО Амбрелла" [ref=e2420]:
+                        - /url: /employer/3087930?hhtmFrom=vacancy_search_list
+                        - generic [ref=e2423]: ООО Амбрелла
+                      - generic [ref=e2424]:
+                        - text: Москва
+                        - generic [ref=e2427]:
+                          - generic [ref=e2428]: ●
+                          - generic [ref=e2429]: Автозаводская
+                        - generic [ref=e2430]: и еще 1
+                        - generic [ref=e2432]: ●
+                  - generic [ref=e2436]:
+                    - button "Откликнуться" [ref=e2437]:
+                      - generic [ref=e2440]: Откликнуться
+                    - button "Контакты" [ref=e2442]:
+                      - generic [ref=e2445]: Контакты
+              - button "Сейчас смотрят 3 человека AI Solutions Engineer Опыт 3-6 лет Можно удалённо Rubius 4.5 • 51 отзыв Москва Откликнуться" [ref=e2449] [cursor=pointer]:
+                - generic [ref=e2453]:
+                  - generic [ref=e2454]:
+                    - generic [ref=e2455]: Сейчас смотрят 3 человека
+                    - link "AI Solutions Engineer" [ref=e2458]:
+                      - /url: https://hh.ru/vacancy/131986957?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e2460]: AI Solutions Engineer
+                    - generic [ref=e2463]:
+                      - generic [ref=e2465]: Опыт 3-6 лет
+                      - generic [ref=e2467]: Можно удалённо
+                    - generic [ref=e2469]:
+                      - generic [ref=e2471]:
+                        - link [ref=e2472]:
+                          - /url: https://feedback.hh.ru/article/details/id/5951
+                          - img [ref=e2474]
+                        - link [ref=e2478]:
+                          - /url: http://hrbrand.ru/?utm_source=hh.ru&utm_medium=referral&utm_campaign=icon&utm_term=anonymous
+                          - img [ref=e2480]
+                        - img [ref=e2492]
+                      - link "Rubius" [ref=e2499]:
+                        - /url: /employer/709383?hhtmFrom=vacancy_search_list
+                        - generic [ref=e2501]: Rubius
+                      - generic [ref=e2504]:
+                        - img [ref=e2505]
+                        - generic [ref=e2509]: "4.5"
+                        - generic [ref=e2510]: •
+                        - generic [ref=e2513]: 51 отзыв
+                      - generic [ref=e2514]: Москва
+                  - button "Откликнуться" [ref=e2520]:
+                    - generic [ref=e2523]: Откликнуться
+              - button "Сейчас смотрит 1 человек Data engineer (Индустрия образования) Опыт 3-6 лет Вакансии Сбер. IT Сбер. IT 4.0 • 25847 отзывов Москва Откликнуться" [ref=e2529] [cursor=pointer]:
+                - generic [ref=e2533]:
+                  - generic [ref=e2534]:
+                    - generic [ref=e2535]: Сейчас смотрит 1 человек
+                    - link "Data engineer (Индустрия образования)" [ref=e2538]:
+                      - /url: https://hh.ru/vacancy/131328152?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e2540]: Data engineer (Индустрия образования)
+                    - generic [ref=e2545]: Опыт 3-6 лет
+                    - generic [ref=e2547]:
+                      - generic [ref=e2549]:
+                        - link [ref=e2550]:
+                          - /url: https://feedback.hh.ru/article/details/id/5951
+                          - img [ref=e2552]
+                        - link [ref=e2556]:
+                          - /url: http://hrbrand.ru/?utm_source=hh.ru&utm_medium=referral&utm_campaign=icon&utm_term=anonymous
+                          - img [ref=e2558]
+                      - link "Вакансии Сбер. IT" [ref=e2569]:
+                        - /url: /employer/3529?dpt=3529-3529-it&hhtmFrom=vacancy_search_list
+                        - img "Сбер. IT" [ref=e2571]
+                      - link "Сбер. IT" [ref=e2572]:
+                        - /url: /employer/3529?dpt=3529-3529-it&hhtmFrom=vacancy_search_list
+                        - generic [ref=e2574]: Сбер. IT
+                      - generic [ref=e2577]:
+                        - img [ref=e2578]
+                        - generic [ref=e2582]: "4.0"
+                        - generic [ref=e2583]: •
+                        - generic [ref=e2586]: 25847 отзывов
+                      - generic [ref=e2587]: Москва
+                  - button "Откликнуться" [ref=e2593]:
+                    - generic [ref=e2596]: Откликнуться
+              - button "Сейчас смотрят 3 человека LLM-специалист / AI Engineer (LLM, Agents, RAG) Опыт 1-3 года Можно удалённо ООО СП Солюшен 4.7 • 3 отзыва Москва ● ЗИЛ и еще 3 ● ● ● Откликнуться" [ref=e2600] [cursor=pointer]:
+                - generic [ref=e2604]:
+                  - generic [ref=e2605]:
+                    - generic [ref=e2606]: Сейчас смотрят 3 человека
+                    - link "LLM-специалист / AI Engineer (LLM, Agents, RAG)" [ref=e2609]:
+                      - /url: https://hh.ru/vacancy/131418895?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e2611]: LLM-специалист / AI Engineer (LLM, Agents, RAG)
+                    - generic [ref=e2614]:
+                      - generic [ref=e2616]: Опыт 1-3 года
+                      - generic [ref=e2618]: Можно удалённо
+                    - generic [ref=e2620]:
+                      - link [ref=e2623]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e2625]
+                      - link "ООО СП Солюшен" [ref=e2631]:
+                        - /url: /employer/11545313?hhtmFrom=vacancy_search_list
+                        - generic [ref=e2634]: ООО СП Солюшен
+                      - generic [ref=e2637]:
+                        - img [ref=e2638]
+                        - generic [ref=e2642]: "4.7"
+                        - generic [ref=e2643]: •
+                        - generic [ref=e2646]: 3 отзыва
+                      - generic [ref=e2647]:
+                        - text: Москва
+                        - generic [ref=e2650]:
+                          - generic [ref=e2651]: ●
+                          - generic [ref=e2652]: ЗИЛ
+                        - generic [ref=e2653]: и еще 3
+                        - generic [ref=e2655]: ●
+                        - generic [ref=e2657]: ●
+                        - generic [ref=e2659]: ●
+                  - button "Откликнуться" [ref=e2664]:
+                    - generic [ref=e2667]: Откликнуться
+              - button "Сейчас смотрят 4 человека Robotics Software Engineer (команда Навигация) Опыт 1-3 года ТехВилл 4.0 • 15 отзывов Москва ● Мякинино и еще 3 ● ● ● Откликнуться" [ref=e2671] [cursor=pointer]:
+                - generic [ref=e2675]:
+                  - generic [ref=e2676]:
+                    - generic [ref=e2677]: Сейчас смотрят 4 человека
+                    - link "Robotics Software Engineer (команда Навигация)" [ref=e2680]:
+                      - /url: https://hh.ru/vacancy/132121088?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e2682]: Robotics Software Engineer (команда Навигация)
+                    - generic [ref=e2687]: Опыт 1-3 года
+                    - generic [ref=e2689]:
+                      - generic [ref=e2691]:
+                        - link [ref=e2692]:
+                          - /url: https://feedback.hh.ru/article/details/id/5951
+                          - img [ref=e2694]
+                        - img [ref=e2702]
+                      - link "ТехВилл" [ref=e2710]:
+                        - /url: /employer/12240460?hhtmFrom=vacancy_search_list
+                        - generic [ref=e2712]: ТехВилл
+                      - generic [ref=e2715]:
+                        - img [ref=e2716]
+                        - generic [ref=e2720]: "4.0"
+                        - generic [ref=e2721]: •
+                        - generic [ref=e2724]: 15 отзывов
+                      - generic [ref=e2725]:
+                        - text: Москва
+                        - generic [ref=e2728]:
+                          - generic [ref=e2729]: ●
+                          - generic [ref=e2730]: Мякинино
+                        - generic [ref=e2731]: и еще 3
+                        - generic [ref=e2733]: ●
+                        - generic [ref=e2735]: ●
+                        - generic [ref=e2737]: ●
+                  - button "Откликнуться" [ref=e2742]:
+                    - generic [ref=e2745]: Откликнуться
+              - button "AI Lead Опыт 3-6 лет Вакансии 585, Холдинг 585, Холдинг 4.2 • 676 отзывов Москва ● Библиотека им.Ленина и еще 3 ● ● ● Откликнуться" [ref=e2749] [cursor=pointer]:
+                - generic [ref=e2753]:
+                  - generic [ref=e2754]:
+                    - link "AI Lead" [ref=e2756]:
+                      - /url: https://hh.ru/vacancy/131417825?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e2758]: AI Lead
+                    - generic [ref=e2763]: Опыт 3-6 лет
+                    - generic [ref=e2765]:
+                      - link [ref=e2768]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e2770]
+                      - link "Вакансии 585, Холдинг" [ref=e2778]:
+                        - /url: /employer/22259?hhtmFrom=vacancy_search_list
+                        - img "585, Холдинг" [ref=e2780]
+                      - link "585, Холдинг" [ref=e2781]:
+                        - /url: /employer/22259?hhtmFrom=vacancy_search_list
+                        - generic [ref=e2783]: 585, Холдинг
+                      - generic [ref=e2786]:
+                        - img [ref=e2787]
+                        - generic [ref=e2791]: "4.2"
+                        - generic [ref=e2792]: •
+                        - generic [ref=e2795]: 676 отзывов
+                      - generic [ref=e2796]:
+                        - text: Москва
+                        - generic [ref=e2799]:
+                          - generic [ref=e2800]: ●
+                          - generic [ref=e2801]: Библиотека им.Ленина
+                        - generic [ref=e2802]: и еще 3
+                        - generic [ref=e2804]: ●
+                        - generic [ref=e2806]: ●
+                        - generic [ref=e2808]: ●
+                  - button "Откликнуться" [ref=e2813]:
+                    - generic [ref=e2816]: Откликнуться
+              - button "AI Lead Опыт 3-6 лет Вакансии 585, Холдинг 585, Холдинг 4.2 • 676 отзывов Москва ● Библиотека им.Ленина и еще 3 ● ● ● Откликнуться" [ref=e2820] [cursor=pointer]:
+                - generic [ref=e2824]:
+                  - generic [ref=e2825]:
+                    - link "AI Lead" [ref=e2827]:
+                      - /url: https://hh.ru/vacancy/131417826?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e2829]: AI Lead
+                    - generic [ref=e2834]: Опыт 3-6 лет
+                    - generic [ref=e2836]:
+                      - link [ref=e2839]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e2841]
+                      - link "Вакансии 585, Холдинг" [ref=e2849]:
+                        - /url: /employer/22259?hhtmFrom=vacancy_search_list
+                        - img "585, Холдинг" [ref=e2851]
+                      - link "585, Холдинг" [ref=e2852]:
+                        - /url: /employer/22259?hhtmFrom=vacancy_search_list
+                        - generic [ref=e2854]: 585, Холдинг
+                      - generic [ref=e2857]:
+                        - img [ref=e2858]
+                        - generic [ref=e2862]: "4.2"
+                        - generic [ref=e2863]: •
+                        - generic [ref=e2866]: 676 отзывов
+                      - generic [ref=e2867]:
+                        - text: Москва
+                        - generic [ref=e2870]:
+                          - generic [ref=e2871]: ●
+                          - generic [ref=e2872]: Библиотека им.Ленина
+                        - generic [ref=e2873]: и еще 3
+                        - generic [ref=e2875]: ●
+                        - generic [ref=e2877]: ●
+                        - generic [ref=e2879]: ●
+                  - button "Откликнуться" [ref=e2884]:
+                    - generic [ref=e2887]: Откликнуться
+              - button "Сейчас смотрят 5 человек AI-креатор Опыт 1-3 года Можно удалённо ИП Штергер Евгений Владимирович 1.0 • 1 отзыв Москва Отклик без резюме Откликнуться" [ref=e2891] [cursor=pointer]:
+                - generic [ref=e2895]:
+                  - generic [ref=e2896]:
+                    - generic [ref=e2897]: Сейчас смотрят 5 человек
+                    - link "AI-креатор" [ref=e2900]:
+                      - /url: https://hh.ru/vacancy/131297944?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e2902]: AI-креатор
+                    - generic [ref=e2905]:
+                      - generic [ref=e2907]: Опыт 1-3 года
+                      - generic [ref=e2909]: Можно удалённо
+                    - generic [ref=e2911]:
+                      - link [ref=e2914]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e2916]
+                      - link "ИП Штергер Евгений Владимирович" [ref=e2921]:
+                        - /url: /employer/10775451?hhtmFrom=vacancy_search_list
+                        - generic [ref=e2924]: ИП Штергер Евгений Владимирович
+                      - generic [ref=e2927]:
+                        - img [ref=e2928]
+                        - generic [ref=e2932]: "1.0"
+                        - generic [ref=e2933]: •
+                        - generic [ref=e2936]: 1 отзыв
+                      - generic [ref=e2937]: Москва
+                    - generic [ref=e2943]: Отклик без резюме
+                  - button "Откликнуться" [ref=e2948]:
+                    - generic [ref=e2951]: Откликнуться
+              - button "Сейчас смотрит 1 человек Support Engineer Опыт 3-6 лет Вакансии Сбер. IT Сбер. IT 4.0 • 25847 отзывов Москва Откликнуться" [ref=e2955] [cursor=pointer]:
+                - generic [ref=e2959]:
+                  - generic [ref=e2960]:
+                    - generic [ref=e2961]: Сейчас смотрит 1 человек
+                    - link "Support Engineer" [ref=e2964]:
+                      - /url: https://hh.ru/vacancy/132090955?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e2966]: Support Engineer
+                    - generic [ref=e2971]: Опыт 3-6 лет
+                    - generic [ref=e2973]:
+                      - generic [ref=e2975]:
+                        - link [ref=e2976]:
+                          - /url: https://feedback.hh.ru/article/details/id/5951
+                          - img [ref=e2978]
+                        - link [ref=e2982]:
+                          - /url: http://hrbrand.ru/?utm_source=hh.ru&utm_medium=referral&utm_campaign=icon&utm_term=anonymous
+                          - img [ref=e2984]
+                      - link "Вакансии Сбер. IT" [ref=e2995]:
+                        - /url: /employer/3529?dpt=3529-3529-it&hhtmFrom=vacancy_search_list
+                        - img "Сбер. IT" [ref=e2997]
+                      - link "Сбер. IT" [ref=e2998]:
+                        - /url: /employer/3529?dpt=3529-3529-it&hhtmFrom=vacancy_search_list
+                        - generic [ref=e3000]: Сбер. IT
+                      - generic [ref=e3003]:
+                        - img [ref=e3004]
+                        - generic [ref=e3008]: "4.0"
+                        - generic [ref=e3009]: •
+                        - generic [ref=e3012]: 25847 отзывов
+                      - generic [ref=e3013]: Москва
+                  - button "Откликнуться" [ref=e3019]:
+                    - generic [ref=e3022]: Откликнуться
+              - button "Сейчас смотрит 1 человек Prompt Engineer / AI‑редактор (нейросети и автоматизация контента) 80 000 – 100 000 ₽ за месяц, на руки Опыт 1-3 года ДЖЕЙКЕТ РАБОТА 4.0 • 31 отзыв Москва ● Театральная Отклик без резюме Откликнуться Контакты" [ref=e3026] [cursor=pointer]:
+                - generic [ref=e3030]:
+                  - generic [ref=e3031]:
+                    - generic [ref=e3032]: Сейчас смотрит 1 человек
+                    - link "Prompt Engineer / AI‑редактор (нейросети и автоматизация контента)" [ref=e3035]:
+                      - /url: https://hh.ru/vacancy/131744414?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e3037]: Prompt Engineer / AI‑редактор (нейросети и автоматизация контента)
+                    - generic [ref=e3039]:
+                      - generic [ref=e3040]: 80 000 – 100 000 ₽ за месяц, на руки
+                      - generic [ref=e3044]: Опыт 1-3 года
+                    - generic [ref=e3046]:
+                      - link [ref=e3049]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e3051]
+                      - link "ДЖЕЙКЕТ РАБОТА" [ref=e3057]:
+                        - /url: /employer/1689259?hhtmFrom=vacancy_search_list
+                        - generic [ref=e3059]: ДЖЕЙКЕТ РАБОТА
+                      - generic [ref=e3062]:
+                        - img [ref=e3063]
+                        - generic [ref=e3067]: "4.0"
+                        - generic [ref=e3068]: •
+                        - generic [ref=e3071]: 31 отзыв
+                      - generic [ref=e3072]:
+                        - text: Москва
+                        - generic [ref=e3075]:
+                          - generic [ref=e3076]: ●
+                          - generic [ref=e3077]: Театральная
+                    - generic [ref=e3082]: Отклик без резюме
+                  - generic [ref=e3086]:
+                    - button "Откликнуться" [ref=e3087]:
+                      - generic [ref=e3090]: Откликнуться
+                    - button "Контакты" [ref=e3092]:
+                      - generic [ref=e3095]: Контакты
+              - button "Сейчас смотрит 1 человек Applied AI / Product Systems Engineer (Mobile, Vision, Pipelines) 3 000 – 8 000 $ за месяц, на руки Опыт 1-3 года Можно удалённо ООО Ит 4.2 • 2 отзыва Москва Откликнуться" [ref=e3099] [cursor=pointer]:
+                - generic [ref=e3103]:
+                  - generic [ref=e3104]:
+                    - generic [ref=e3105]: Сейчас смотрит 1 человек
+                    - link "Applied AI / Product Systems Engineer (Mobile, Vision, Pipelines)" [ref=e3108]:
+                      - /url: https://hh.ru/vacancy/131918403?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e3110]: Applied AI / Product Systems Engineer (Mobile, Vision, Pipelines)
+                    - generic [ref=e3112]:
+                      - generic [ref=e3113]: 3 000 – 8 000 $ за месяц, на руки
+                      - generic [ref=e3115]:
+                        - generic [ref=e3117]: Опыт 1-3 года
+                        - generic [ref=e3119]: Можно удалённо
+                    - generic [ref=e3121]:
+                      - link [ref=e3124]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e3126]
+                      - link "ООО Ит" [ref=e3131]:
+                        - /url: /employer/3882315?hhtmFrom=vacancy_search_list
+                        - generic [ref=e3134]: ООО Ит
+                      - generic [ref=e3137]:
+                        - img [ref=e3138]
+                        - generic [ref=e3142]: "4.2"
+                        - generic [ref=e3143]: •
+                        - generic [ref=e3146]: 2 отзыва
+                      - generic [ref=e3147]: Москва
+                  - button "Откликнуться" [ref=e3153]:
+                    - generic [ref=e3156]: Откликнуться
+              - 'button "Сейчас смотрит 1 человек Руководитель по тестированию и документации AI-first QA Lead 150 000 – 180 000 ₽ за месяц, до вычета налогов Опыт 3-6 лет Можно удалённо Выплаты: два раза в месяц ООО Гларус Диджитал 3.9 • 3 отзыва Москва ● Деловой центр и еще 3 ● ● ● Откликнуться" [ref=e3160] [cursor=pointer]':
+                - generic [ref=e3164]:
+                  - generic [ref=e3165]:
+                    - generic [ref=e3166]: Сейчас смотрит 1 человек
+                    - link "Руководитель по тестированию и документации AI-first QA Lead" [ref=e3169]:
+                      - /url: https://hh.ru/vacancy/131794265?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e3171]: Руководитель по тестированию и документации AI-first QA Lead
+                    - generic [ref=e3173]:
+                      - generic [ref=e3174]: 150 000 – 180 000 ₽ за месяц, до вычета налогов
+                      - generic [ref=e3176]:
+                        - generic [ref=e3178]: Опыт 3-6 лет
+                        - generic [ref=e3180]: Можно удалённо
+                        - generic [ref=e3183]: "Выплаты: два раза в месяц"
+                    - generic [ref=e3185]:
+                      - link [ref=e3188]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e3190]
+                      - link "ООО Гларус Диджитал" [ref=e3195]:
+                        - /url: /employer/4140847?hhtmFrom=vacancy_search_list
+                        - generic [ref=e3198]: ООО Гларус Диджитал
+                      - generic [ref=e3201]:
+                        - img [ref=e3202]
+                        - generic [ref=e3206]: "3.9"
+                        - generic [ref=e3207]: •
+                        - generic [ref=e3210]: 3 отзыва
+                      - generic [ref=e3211]:
+                        - text: Москва
+                        - generic [ref=e3214]:
+                          - generic [ref=e3215]: ●
+                          - generic [ref=e3216]: Деловой центр
+                        - generic [ref=e3217]: и еще 3
+                        - generic [ref=e3219]: ●
+                        - generic [ref=e3221]: ●
+                        - generic [ref=e3223]: ●
+                  - button "Откликнуться" [ref=e3228]:
+                    - generic [ref=e3231]: Откликнуться
+              - 'button "AI-инженер / Архитектор мультиагентных систем 234 900 – 360 000 ₽ за месяц, на руки Опыт 3-6 лет Выплаты: раз в месяц Думатель Москва ● Деловой центр и еще 3 ● ● ● Откликнуться Контакты" [ref=e3237] [cursor=pointer]':
+                - generic [ref=e3241]:
+                  - generic [ref=e3242]:
+                    - link "AI-инженер / Архитектор мультиагентных систем" [ref=e3244]:
+                      - /url: https://hh.ru/vacancy/131482207?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e3246]: AI-инженер / Архитектор мультиагентных систем
+                    - generic [ref=e3248]:
+                      - generic [ref=e3249]: 234 900 – 360 000 ₽ за месяц, на руки
+                      - generic [ref=e3251]:
+                        - generic [ref=e3253]: Опыт 3-6 лет
+                        - generic [ref=e3256]: "Выплаты: раз в месяц"
+                    - generic [ref=e3258]:
+                      - link [ref=e3261]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e3263]
+                      - link "Думатель" [ref=e3269]:
+                        - /url: /employer/5577458?hhtmFrom=vacancy_search_list
+                        - generic [ref=e3271]: Думатель
+                      - generic [ref=e3272]:
+                        - text: Москва
+                        - generic [ref=e3275]:
+                          - generic [ref=e3276]: ●
+                          - generic [ref=e3277]: Деловой центр
+                        - generic [ref=e3278]: и еще 3
+                        - generic [ref=e3280]: ●
+                        - generic [ref=e3282]: ●
+                        - generic [ref=e3284]: ●
+                  - generic [ref=e3288]:
+                    - button "Откликнуться" [ref=e3289]:
+                      - generic [ref=e3292]: Откликнуться
+                    - button "Контакты" [ref=e3294]:
+                      - generic [ref=e3297]: Контакты
+              - 'button "Сейчас смотрят 2 человека AI-контент менеджер 60 000 – 90 000 ₽ за месяц, на руки Опыт 1-3 года Можно удалённо Выплаты: два раза в месяц gptfox.io Москва ● Библиотека им.Ленина и еще 3 ● ● ● Откликнуться Контакты" [ref=e3301] [cursor=pointer]':
+                - generic [ref=e3305]:
+                  - generic [ref=e3306]:
+                    - generic [ref=e3307]: Сейчас смотрят 2 человека
+                    - link "AI-контент менеджер" [ref=e3310]:
+                      - /url: https://hh.ru/vacancy/131837176?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e3312]: AI-контент менеджер
+                    - generic [ref=e3314]:
+                      - generic [ref=e3315]: 60 000 – 90 000 ₽ за месяц, на руки
+                      - generic [ref=e3317]:
+                        - generic [ref=e3319]: Опыт 1-3 года
+                        - generic [ref=e3321]: Можно удалённо
+                        - generic [ref=e3324]: "Выплаты: два раза в месяц"
+                    - generic [ref=e3326]:
+                      - link [ref=e3329]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e3331]
+                      - link "gptfox.io" [ref=e3336]:
+                        - /url: /employer/12562944?hhtmFrom=vacancy_search_list
+                        - generic [ref=e3338]: gptfox.io
+                      - generic [ref=e3339]:
+                        - text: Москва
+                        - generic [ref=e3342]:
+                          - generic [ref=e3343]: ●
+                          - generic [ref=e3344]: Библиотека им.Ленина
+                        - generic [ref=e3345]: и еще 3
+                        - generic [ref=e3347]: ●
+                        - generic [ref=e3349]: ●
+                        - generic [ref=e3351]: ●
+                  - generic [ref=e3355]:
+                    - button "Откликнуться" [ref=e3356]:
+                      - generic [ref=e3359]: Откликнуться
+                    - button "Контакты" [ref=e3361]:
+                      - generic [ref=e3364]: Контакты
+              - button "Сейчас смотрят 3 человека Data Engineer Опыт 1-3 года Можно удалённо Corporate Performance Systems 4.7 • 10 отзывов Москва Откликнуться" [ref=e3368] [cursor=pointer]:
+                - generic [ref=e3372]:
+                  - generic [ref=e3373]:
+                    - generic [ref=e3374]: Сейчас смотрят 3 человека
+                    - link "Data Engineer" [ref=e3377]:
+                      - /url: https://hh.ru/vacancy/131904274?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e3379]: Data Engineer
+                    - generic [ref=e3382]:
+                      - generic [ref=e3384]: Опыт 1-3 года
+                      - generic [ref=e3386]: Можно удалённо
+                    - generic [ref=e3388]:
+                      - generic [ref=e3390]:
+                        - link [ref=e3391]:
+                          - /url: https://feedback.hh.ru/article/details/id/5951
+                          - img [ref=e3393]
+                        - img [ref=e3401]
+                      - link "Corporate Performance Systems" [ref=e3409]:
+                        - /url: /employer/4730370?hhtmFrom=vacancy_search_list
+                        - generic [ref=e3411]: Corporate Performance Systems
+                      - generic [ref=e3414]:
+                        - img [ref=e3415]
+                        - generic [ref=e3419]: "4.7"
+                        - generic [ref=e3420]: •
+                        - generic [ref=e3423]: 10 отзывов
+                      - generic [ref=e3424]: Москва
+                  - button "Откликнуться" [ref=e3430]:
+                    - generic [ref=e3433]: Откликнуться
+              - button "Сейчас смотрит 1 человек CV Engineer - Team Lead (Инженер машинного обучения/Компьютерного зрения) Опыт 3-6 лет EKSLi 4.9 • 3 отзыва Москва ● Калужская Отклик без резюме Откликнуться" [ref=e3437] [cursor=pointer]:
+                - generic [ref=e3441]:
+                  - generic [ref=e3442]:
+                    - generic [ref=e3443]: Сейчас смотрит 1 человек
+                    - link "CV Engineer - Team Lead (Инженер машинного обучения/Компьютерного зрения)" [ref=e3446]:
+                      - /url: https://hh.ru/vacancy/131519069?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e3448]: CV Engineer - Team Lead (Инженер машинного обучения/Компьютерного зрения)
+                    - generic [ref=e3453]: Опыт 3-6 лет
+                    - generic [ref=e3455]:
+                      - generic [ref=e3457]:
+                        - link [ref=e3458]:
+                          - /url: https://feedback.hh.ru/article/details/id/5951
+                          - img [ref=e3460]
+                        - img [ref=e3468]
+                      - link "EKSLi" [ref=e3476]:
+                        - /url: /employer/9945523?hhtmFrom=vacancy_search_list
+                        - generic [ref=e3478]: EKSLi
+                      - generic [ref=e3481]:
+                        - img [ref=e3482]
+                        - generic [ref=e3486]: "4.9"
+                        - generic [ref=e3487]: •
+                        - generic [ref=e3490]: 3 отзыва
+                      - generic [ref=e3491]:
+                        - text: Москва
+                        - generic [ref=e3494]:
+                          - generic [ref=e3495]: ●
+                          - generic [ref=e3496]: Калужская
+                    - generic [ref=e3501]: Отклик без резюме
+                  - button "Откликнуться" [ref=e3506]:
+                    - generic [ref=e3509]: Откликнуться
+              - button "AI Product Manager Опыт 3-6 лет Можно удалённо Вакансии HeadHunter::Product Management ООО HeadHunter::Product Management 4.5 • 240 отзывов Москва Откликнуться" [ref=e3513] [cursor=pointer]:
+                - generic [ref=e3517]:
+                  - generic [ref=e3518]:
+                    - link "AI Product Manager" [ref=e3520]:
+                      - /url: https://hh.ru/vacancy/132087470?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e3522]: AI Product Manager
+                    - generic [ref=e3525]:
+                      - generic [ref=e3527]: Опыт 3-6 лет
+                      - generic [ref=e3529]: Можно удалённо
+                    - generic [ref=e3531]:
+                      - generic [ref=e3533]:
+                        - link [ref=e3534]:
+                          - /url: https://feedback.hh.ru/article/details/id/5951
+                          - img [ref=e3536]
+                        - img [ref=e3544]
+                      - link "Вакансии HeadHunter::Product Management" [ref=e3553]:
+                        - /url: /employer/1455?dpt=hh-1455-product&hhtmFrom=vacancy_search_list
+                        - img "HeadHunter::Product Management" [ref=e3555]
+                      - link "ООО HeadHunter::Product Management" [ref=e3556]:
+                        - /url: /employer/1455?dpt=hh-1455-product&hhtmFrom=vacancy_search_list
+                        - generic [ref=e3559]: ООО HeadHunter::Product Management
+                      - generic [ref=e3562]:
+                        - img [ref=e3563]
+                        - generic [ref=e3567]: "4.5"
+                        - generic [ref=e3568]: •
+                        - generic [ref=e3571]: 240 отзывов
+                      - generic [ref=e3572]: Москва
+                  - button "Откликнуться" [ref=e3578]:
+                    - generic [ref=e3581]: Откликнуться
+              - button "Сейчас смотрит 1 человек Senior Python Developer (AI Backend) Опыт 3-6 лет Можно удалённо Подработка ООО Бридж Тревел Москва Откликнуться" [ref=e3585] [cursor=pointer]:
+                - generic [ref=e3589]:
+                  - generic [ref=e3590]:
+                    - generic [ref=e3591]: Сейчас смотрит 1 человек
+                    - link "Senior Python Developer (AI Backend)" [ref=e3594]:
+                      - /url: https://hh.ru/vacancy/130458289?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e3596]: Senior Python Developer (AI Backend)
+                    - generic [ref=e3599]:
+                      - generic [ref=e3601]: Опыт 3-6 лет
+                      - generic [ref=e3603]: Можно удалённо
+                      - generic [ref=e3605]: Подработка
+                    - generic [ref=e3607]:
+                      - link [ref=e3610]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e3612]
+                      - link "ООО Бридж Тревел" [ref=e3617]:
+                        - /url: /employer/12483749?hhtmFrom=vacancy_search_list
+                        - generic [ref=e3620]: ООО Бридж Тревел
+                      - generic [ref=e3621]: Москва
+                  - button "Откликнуться" [ref=e3627]:
+                    - generic [ref=e3630]: Откликнуться
+              - button "Robotics Software Engineer Опыт 1-3 года ТехВилл 4.0 • 15 отзывов Москва ● Мякинино и еще 3 ● ● ● Откликнуться" [ref=e3634] [cursor=pointer]:
+                - generic [ref=e3638]:
+                  - generic [ref=e3639]:
+                    - link "Robotics Software Engineer" [ref=e3641]:
+                      - /url: https://hh.ru/vacancy/131478467?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e3643]: Robotics Software Engineer
+                    - generic [ref=e3648]: Опыт 1-3 года
+                    - generic [ref=e3650]:
+                      - generic [ref=e3652]:
+                        - link [ref=e3653]:
+                          - /url: https://feedback.hh.ru/article/details/id/5951
+                          - img [ref=e3655]
+                        - img [ref=e3663]
+                      - link "ТехВилл" [ref=e3671]:
+                        - /url: /employer/12240460?hhtmFrom=vacancy_search_list
+                        - generic [ref=e3673]: ТехВилл
+                      - generic [ref=e3676]:
+                        - img [ref=e3677]
+                        - generic [ref=e3681]: "4.0"
+                        - generic [ref=e3682]: •
+                        - generic [ref=e3685]: 15 отзывов
+                      - generic [ref=e3686]:
+                        - text: Москва
+                        - generic [ref=e3689]:
+                          - generic [ref=e3690]: ●
+                          - generic [ref=e3691]: Мякинино
+                        - generic [ref=e3692]: и еще 3
+                        - generic [ref=e3694]: ●
+                        - generic [ref=e3696]: ●
+                        - generic [ref=e3698]: ●
+                  - button "Откликнуться" [ref=e3703]:
+                    - generic [ref=e3706]: Откликнуться
+              - 'button "Lead AI Systems Designer 2 500 – 5 000 $ за месяц, на руки Опыт 1-3 года Можно удалённо Выплаты: раз в месяц Частная компания Endgame Studio Ltd. Москва Откликнуться" [ref=e3710] [cursor=pointer]':
+                - generic [ref=e3714]:
+                  - generic [ref=e3715]:
+                    - link "Lead AI Systems Designer" [ref=e3717]:
+                      - /url: https://hh.ru/vacancy/131483612?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e3719]: Lead AI Systems Designer
+                    - generic [ref=e3721]:
+                      - generic [ref=e3722]: 2 500 – 5 000 $ за месяц, на руки
+                      - generic [ref=e3724]:
+                        - generic [ref=e3726]: Опыт 1-3 года
+                        - generic [ref=e3728]: Можно удалённо
+                        - generic [ref=e3731]: "Выплаты: раз в месяц"
+                    - generic [ref=e3733]:
+                      - link [ref=e3736]:
+                        - /url: https://feedback.hh.ru/article/details/id/5951
+                        - img [ref=e3738]
+                      - link "Частная компания Endgame Studio Ltd." [ref=e3743]:
+                        - /url: /employer/12630623?hhtmFrom=vacancy_search_list
+                        - generic [ref=e3745]: Частная компания Endgame Studio Ltd.
+                      - generic [ref=e3746]: Москва
+                  - button "Откликнуться" [ref=e3752]:
+                    - generic [ref=e3755]: Откликнуться
+              - button "Team Lead ML Engineer (Large-Scale Multimodal Dataset Pipelines) Опыт 3-6 лет Вакансии Сбер. Data Science Сбер. Data Science 4.0 • 25847 отзывов Москва Откликнуться" [ref=e3759] [cursor=pointer]:
+                - generic [ref=e3763]:
+                  - generic [ref=e3764]:
+                    - link "Team Lead ML Engineer (Large-Scale Multimodal Dataset Pipelines)" [ref=e3766]:
+                      - /url: https://hh.ru/vacancy/132123759?query=AI+engineer&hhtmFrom=vacancy_search_list
+                      - generic [ref=e3768]: Team Lead ML Engineer (Large-Scale Multimodal Dataset Pipelines)
+                    - generic [ref=e3773]: Опыт 3-6 лет
+                    - generic [ref=e3775]:
+                      - generic [ref=e3777]:
+                        - link [ref=e3778]:
+                          - /url: https://feedback.hh.ru/article/details/id/5951
+                          - img [ref=e3780]
+                        - link [ref=e3784]:
+                          - /url: http://hrbrand.ru/?utm_source=hh.ru&utm_medium=referral&utm_campaign=icon&utm_term=anonymous
+                          - img [ref=e3786]
+                      - link "Вакансии Сбер. Data Science" [ref=e3797]:
+                        - /url: /employer/3529?dpt=3529-3529-data&hhtmFrom=vacancy_search_list
+                        - img "Сбер. Data Science" [ref=e3799]
+                      - link "Сбер. Data Science" [ref=e3800]:
+                        - /url: /employer/3529?dpt=3529-3529-data&hhtmFrom=vacancy_search_list
+                        - generic [ref=e3802]: Сбер. Data Science
+                      - generic [ref=e3805]:
+                        - img [ref=e3806]
+                        - generic [ref=e3810]: "4.0"
+                        - generic [ref=e3811]: •
+                        - generic [ref=e3814]: 25847 отзывов
+                      - generic [ref=e3815]: Москва
+                  - button "Откликнуться" [ref=e3821]:
+                    - generic [ref=e3824]: Откликнуться
+            - navigation [ref=e3829]:
+              - list [ref=e3830]:
+                - listitem [ref=e3831]:
+                  - generic [ref=e3832]:
+                    - link "1":
+                      - /url: /search/vacancy?text=AI+engineer&area=1&page=0&search_session_id=b1515ec6-26c3-4039-833c-fccd0a75fc69&hhtmFrom=vacancy_search_list
+                - listitem [ref=e3833]:
+                  - link "2" [ref=e3835] [cursor=pointer]:
+                    - /url: /search/vacancy?text=AI+engineer&area=1&page=1&search_session_id=b1515ec6-26c3-4039-833c-fccd0a75fc69&hhtmFrom=vacancy_search_list
+                - listitem [ref=e3836]:
+                  - link "3" [ref=e3838] [cursor=pointer]:
+                    - /url: /search/vacancy?text=AI+engineer&area=1&page=2&search_session_id=b1515ec6-26c3-4039-833c-fccd0a75fc69&hhtmFrom=vacancy_search_list
+                - listitem [ref=e3839]:
+                  - link "4" [ref=e3841] [cursor=pointer]:
+                    - /url: /search/vacancy?text=AI+engineer&area=1&page=3&search_session_id=b1515ec6-26c3-4039-833c-fccd0a75fc69&hhtmFrom=vacancy_search_list
+                - listitem [ref=e3842]:
+                  - link "5" [ref=e3844] [cursor=pointer]:
+                    - /url: /search/vacancy?text=AI+engineer&area=1&page=4&search_session_id=b1515ec6-26c3-4039-833c-fccd0a75fc69&hhtmFrom=vacancy_search_list
+                - listitem [ref=e3845]:
+                  - link "6" [ref=e3847] [cursor=pointer]:
+                    - /url: /search/vacancy?text=AI+engineer&area=1&page=5&search_session_id=b1515ec6-26c3-4039-833c-fccd0a75fc69&hhtmFrom=vacancy_search_list
+                - listitem [ref=e3848]: ...
+                - listitem [ref=e3849]:
+                  - link "15" [ref=e3851] [cursor=pointer]:
+                    - /url: /search/vacancy?text=AI+engineer&area=1&page=14&search_session_id=b1515ec6-26c3-4039-833c-fccd0a75fc69&hhtmFrom=vacancy_search_list
+                - listitem [ref=e3852]:
+                  - link [ref=e3854] [cursor=pointer]:
+                    - /url: /search/vacancy?text=AI+engineer&area=1&page=1&search_session_id=b1515ec6-26c3-4039-833c-fccd0a75fc69&hhtmFrom=vacancy_search_list
+                    - img [ref=e3855]
+            - generic [ref=e3859]:
+              - heading "Быстрые фильтры" [level=3] [ref=e3860]
+              - list [ref=e3862]:
+                - listitem [ref=e3863]:
+                  - link "Без опыта работы" [ref=e3865]:
+                    - /url: /vacancies/bez_opyta_raboty
+                    - generic [ref=e3867]: Без опыта работы
+                - listitem [ref=e3868]:
+                  - link "Вечерняя и ночная" [ref=e3870]:
+                    - /url: /vacancies/vechernyaya_i_nochnaya
+                    - generic [ref=e3872]: Вечерняя и ночная
+                - listitem [ref=e3873]:
+                  - link "Вахтовый метод" [ref=e3875]:
+                    - /url: /vacancies/vakhtoviy_metod
+                    - generic [ref=e3877]: Вахтовый метод
+                - listitem [ref=e3878]:
+                  - link "График 5/2" [ref=e3880]:
+                    - /url: /vacancies/5-2
+                    - generic [ref=e3882]: График 5/2
+                - listitem [ref=e3883]:
+                  - link "Гибкий график" [ref=e3885]:
+                    - /url: /vacancies/gibkiy_grafik
+                    - generic [ref=e3887]: Гибкий график
+                - listitem [ref=e3888]:
+                  - link "Два через два" [ref=e3890]:
+                    - /url: /vacancies/2-2
+                    - generic [ref=e3892]: Два через два
+                - listitem [ref=e3893]:
+                  - link "За последние три дня" [ref=e3895]:
+                    - /url: /vacancies/za_poslednie_tri_dnya
+                    - generic [ref=e3897]: За последние три дня
+                - listitem [ref=e3898]:
+                  - link "За сутки" [ref=e3900]:
+                    - /url: /vacancies/za_sutki
+                    - generic [ref=e3902]: За сутки
+                - listitem [ref=e3903]:
+                  - link "От прямых работодателей" [ref=e3905]:
+                    - /url: /vacancies/ot_pryamih_rabotodateley
+                    - generic [ref=e3907]: От прямых работодателей
+                - listitem [ref=e3908]:
+                  - link "Полный день" [ref=e3910]:
+                    - /url: /vacancies/polniy_den
+                    - generic [ref=e3912]: Полный день
+                - listitem [ref=e3913]:
+                  - link "По совместительству" [ref=e3915]:
+                    - /url: /vacancies/po_sovmestitelstvu
+                    - generic [ref=e3917]: По совместительству
+                - listitem [ref=e3918]:
+                  - link "Подработка" [ref=e3920]:
+                    - /url: /vacancies/podrabotka
+                    - generic [ref=e3922]: Подработка
+                - listitem [ref=e3923]:
+                  - link "Полная занятость" [ref=e3925]:
+                    - /url: /vacancies/polnaya_zanyatost
+                    - generic [ref=e3927]: Полная занятость
+                - listitem [ref=e3928]:
+                  - link "Для людей с инвалидностью" [ref=e3930]:
+                    - /url: /vacancies/rabota_dlya_invalidov
+                    - generic [ref=e3932]: Для людей с инвалидностью
+                - listitem [ref=e3933]:
+                  - link "Сменный график" [ref=e3935]:
+                    - /url: /vacancies/smenniy_grafik
+                    - generic [ref=e3937]: Сменный график
+                - listitem [ref=e3938]:
+                  - link "Сутки через двое" [ref=e3940]:
+                    - /url: /vacancies/1-2
+                    - generic [ref=e3942]: Сутки через двое
+                - listitem [ref=e3943]:
+                  - link "Сутки через трое" [ref=e3945]:
+                    - /url: /vacancies/1-3
+                    - generic [ref=e3947]: Сутки через трое
+                - listitem [ref=e3948]:
+                  - link "Три через три" [ref=e3950]:
+                    - /url: /vacancies/3-3
+                    - generic [ref=e3952]: Три через три
+                - listitem [ref=e3953]:
+                  - link "Удаленная работа" [ref=e3955]:
+                    - /url: /vacancies/udalennaya_rabota
+                    - generic [ref=e3957]: Удаленная работа
+                - listitem [ref=e3958]:
+                  - link "Частичная занятость" [ref=e3960]:
+                    - /url: /vacancies/chastichnaya_zanyatost
+                    - generic [ref=e3962]: Частичная занятость
+        - generic:
+          - button [ref=e3966] [cursor=pointer]:
+            - img [ref=e3967]
+          - button "Фильтры 1" [ref=e3970] [cursor=pointer]:
+            - generic [ref=e3971]:
+              - img [ref=e3972]
+              - generic [ref=e3975]: Фильтры
+              - generic [ref=e3976]: "1"
+      - generic [ref=e3981]:
+        - generic [ref=e3982]:
+          - generic [ref=e3984]:
+            - generic [ref=e3985]: HeadHunter
+            - list [ref=e3987]:
+              - listitem [ref=e3988]:
+                - link "Размещение вакансий" [ref=e3990]:
+                  - /url: /employer?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - generic [ref=e3992]: Размещение вакансий
+              - listitem [ref=e3993]:
+                - link "Поиск по резюме" [ref=e3995]:
+                  - /url: /search/resume?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - generic [ref=e3997]: Поиск по резюме
+              - listitem [ref=e3998]:
+                - link "О компании" [ref=e4000]:
+                  - /url: /article/28?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - generic [ref=e4002]: О компании
+              - listitem [ref=e4003]:
+                - link "Помощь" [ref=e4005]:
+                  - /url: https://feedback.hh.ru/ticket/add?utm_source=hh.ru&utm_medium=referral&utm_campaign=from_footer_new
+                  - generic [ref=e4007]: Помощь
+              - listitem [ref=e4008]:
+                - link "Наши вакансии" [ref=e4010]:
+                  - /url: /employer/1455?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - generic [ref=e4012]: Наши вакансии
+              - listitem [ref=e4013]:
+                - link "Реклама на сайте" [ref=e4015]:
+                  - /url: /article/promoproducts?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - generic [ref=e4017]: Реклама на сайте
+              - listitem [ref=e4018]:
+                - link "Требования к ПО" [ref=e4020]:
+                  - /url: /article/176?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - generic [ref=e4022]: Требования к ПО
+              - listitem [ref=e4023]:
+                - link "Безопасный HeadHunter" [ref=e4025]:
+                  - /url: /safety?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - generic [ref=e4027]: Безопасный HeadHunter
+              - listitem [ref=e4028]:
+                - link "HeadHunter API" [ref=e4030]:
+                  - /url: https://dev.hh.ru/?utm_source=hh.ru&utm_medium=referral&utm_campaign=from_footer_new
+                  - generic [ref=e4032]: HeadHunter API
+              - listitem [ref=e4033]:
+                - link "Партнерам" [ref=e4035]:
+                  - /url: /partners?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - generic [ref=e4037]: Партнерам
+              - listitem [ref=e4038]:
+                - link "Инвесторам" [ref=e4040]:
+                  - /url: https://investor.hh.ru/
+                  - generic [ref=e4042]: Инвесторам
+              - listitem [ref=e4043]:
+                - link "Каталог компаний" [ref=e4045]:
+                  - /url: /employers_company?hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - generic [ref=e4047]: Каталог компаний
+              - listitem [ref=e4048]:
+                - link "Поиск по вакансиям в Москве" [ref=e4050]:
+                  - /url: /vacancies
+                  - generic [ref=e4052]: Поиск по вакансиям в Москве
+              - listitem [ref=e4053]:
+                - link "Работа рядом с метро" [ref=e4055]:
+                  - /url: /metro?hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - generic [ref=e4057]: Работа рядом с метро
+              - listitem [ref=e4058]:
+                - 'button "Сетка: соцсеть для нетворкинга" [ref=e4060]':
+                  - generic [ref=e4065]: "Сетка: соцсеть для нетворкинга"
+          - generic [ref=e4068]:
+            - generic [ref=e4069]: Соискателям
+            - list [ref=e4071]:
+              - listitem [ref=e4072]:
+                - link "hh PRO" [ref=e4074]:
+                  - /url: /applicant-services/hhpro?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - generic [ref=e4076]: hh PRO
+              - listitem [ref=e4077]:
+                - link "Готовое резюме" [ref=e4079]:
+                  - /url: /article/expert_resume?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - generic [ref=e4081]: Готовое резюме
+              - listitem [ref=e4082]:
+                - link "Все сервисы" [ref=e4084]:
+                  - /url: /services?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - generic [ref=e4086]: Все сервисы
+              - listitem [ref=e4087]:
+                - link "Профориентация" [ref=e4089]:
+                  - /url: /article/proforientation_promo?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - generic [ref=e4091]: Профориентация
+              - listitem [ref=e4092]:
+                - link "Хочу у вас работать" [ref=e4094]:
+                  - /url: /applicant-services/hhpro?rte=true&from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - generic [ref=e4096]: Хочу у вас работать
+              - listitem [ref=e4097]:
+                - link "Производственный календарь" [ref=e4099]:
+                  - /url: /calendar?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - generic [ref=e4101]: Производственный календарь
+              - listitem [ref=e4102]:
+                - link "Экспертная рекомендация" [ref=e4104]:
+                  - /url: /article/resume_audit?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - generic [ref=e4106]: Экспертная рекомендация
+            - generic [ref=e4108]: Новости и статьи
+            - list [ref=e4110]:
+              - listitem [ref=e4111]:
+                - link "Рынок труда" [ref=e4113]:
+                  - /url: /articles/labour-market?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - generic [ref=e4115]: Рынок труда
+              - listitem [ref=e4116]:
+                - link "О компаниях в игровой форме" [ref=e4118]:
+                  - /url: /articles/guide-to-companies/special-projects?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - generic [ref=e4120]: О компаниях в игровой форме
+              - listitem [ref=e4121]:
+                - link "Жизнь в компании" [ref=e4123]:
+                  - /url: /articles/guide-to-companies/insider?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - generic [ref=e4125]: Жизнь в компании
+              - listitem [ref=e4126]:
+                - link "ИТ-проекты" [ref=e4128]:
+                  - /url: /articles/guide-to-companies/it-projects?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - generic [ref=e4130]: ИТ-проекты
+              - listitem [ref=e4131]:
+                - link "Рейтинг работодателей России" [ref=e4133]:
+                  - /url: https://rating.hh.ru/poll?utm_source=hh.ru&utm_medium=referral&utm_campaign=from_footer_new
+                  - generic [ref=e4135]: Рейтинг работодателей России
+          - generic [ref=e4138]:
+            - generic [ref=e4139]: Молодым специалистам
+            - list [ref=e4141]:
+              - listitem [ref=e4142]:
+                - link "Карьера для молодых специалистов" [ref=e4144]:
+                  - /url: /students?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+                  - generic [ref=e4146]: Карьера для молодых специалистов
+              - listitem [ref=e4147]:
+                - link "Школа программистов" [ref=e4149]:
+                  - /url: http://school.hh.ru/?utm_source=hh.ru&utm_medium=referral&utm_campaign=from_footer_new
+                  - generic [ref=e4151]: Школа программистов
+              - listitem [ref=e4152]:
+                - link "Карьера в некоммерческих организациях" [ref=e4154]:
+                  - /url: https://nko.hh.ru/?utm_source=hh.ru&utm_medium=referral&utm_campaign=from_footer_new
+                  - generic [ref=e4156]: Карьера в некоммерческих организациях
+            - list [ref=e4158]:
+              - listitem [ref=e4159]:
+                - generic [ref=e4160]: Боты для уведомлений
+                - generic [ref=e4162]:
+                  - button "chatBotTelegram" [ref=e4163] [cursor=pointer]:
+                    - img "chatBotTelegram" [ref=e4167]
+                  - button "chatBotViber" [ref=e4169] [cursor=pointer]:
+                    - img "chatBotViber" [ref=e4173]
+                  - button "chatBotVk" [ref=e4176] [cursor=pointer]:
+                    - img "chatBotVk" [ref=e4180]
+            - generic [ref=e4185]: Мобильное приложение
+        - list [ref=e4191]:
+          - listitem [ref=e4192]:
+            - link "Этика и комплаенс" [ref=e4194]:
+              - /url: /article/compliance?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - generic [ref=e4196]: Этика и комплаенс
+          - listitem [ref=e4197]:
+            - link "Оказание услуг" [ref=e4199]:
+              - /url: /conditions?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - generic [ref=e4201]: Оказание услуг
+          - listitem [ref=e4202]:
+            - link "Использование сайтов" [ref=e4204]:
+              - /url: /terms?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - generic [ref=e4206]: Использование сайтов
+          - listitem [ref=e4207]:
+            - link "Защита персональных данных" [ref=e4209]:
+              - /url: /article/personal_data?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - generic [ref=e4211]: Защита персональных данных
+          - listitem [ref=e4212]:
+            - link "Пользовательское соглашение" [ref=e4214]:
+              - /url: /account/agreement?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - generic [ref=e4216]: Пользовательское соглашение
+          - listitem [ref=e4217]:
+            - link "ИТ аккредитация" [ref=e4219]:
+              - /url: /article/it-accreditation?from=footer_new&hhtmFromLabel=footer_new&hhtmFrom=vacancy_search_list
+              - generic [ref=e4221]: ИТ аккредитация
+        - generic [ref=e4227]:
+          - text: На информационном ресурсе hh.ru
+          - link "применяются рекомендательные технологии" [ref=e4228] [cursor=pointer]:
+            - /url: /article/recommendation_technologies?hhtmFrom=vacancy_search_list
+          - text: (информационные технологии предоставления информации на основе сбора, систематизации и анализа сведений, относящихся к предпочтениям пользователей сети «Интернет», находящихся на территории Российской Федерации)
+        - generic [ref=e4233]:
+          - generic [ref=e4234]:
+            - button [ref=e4235] [cursor=pointer]
+            - button "vk" [ref=e4243] [cursor=pointer]:
+              - img "vk" [ref=e4250]
+            - button "dzen" [ref=e4253] [cursor=pointer]:
+              - img "dzen" [ref=e4260]
+            - button "telegram" [ref=e4263] [cursor=pointer]:
+              - img "telegram" [ref=e4270]
+          - generic [ref=e4273]:
+            - list [ref=e4274]:
+              - listitem [ref=e4275]:
+                - button "Русский" [ref=e4277]:
+                  - generic [ref=e4281]:
+                    - img [ref=e4282]
+                    - text: Русский
+            - generic [ref=e4286]: © 2026 ООО «Хэдхантер»
+  - generic [ref=e4289]:
+    - generic [ref=e4292]:
+      - text: Ваш регион — Москва?
+      - generic [ref=e4294]:
+        - button "Всё верно" [ref=e4295] [cursor=pointer]
+        - button "Выбрать другой" [ref=e4296] [cursor=pointer]
+    - img [ref=e4298] [cursor=pointer]
+  - iframe

@@ -19,17 +19,23 @@ export class BrowserController {
   private page: Page | null = null;
 
   async launch(): Promise<void> {
-    this.browser = await chromium.launch({
+    // Persistent session: use userDataDir so logins survive between runs
+    const { join } = await import("path");
+    const { homedir } = await import("os");
+    const { mkdirSync } = await import("fs");
+    const userDataDir = process.env.BROWSER_DATA_DIR || join(homedir(), ".browser-agent", "chromium-profile");
+    mkdirSync(userDataDir, { recursive: true });
+
+    this.context = await chromium.launchPersistentContext(userDataDir, {
       headless: false,
       args: ["--start-maximized", "--disable-blink-features=AutomationControlled"],
-    });
-    this.context = await this.browser.newContext({
       viewport: { width: 1280, height: 900 },
       locale: "ru-RU",
       userAgent:
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
     });
-    this.page = await this.context.newPage();
+    this.page = this.context.pages()[0] || await this.context.newPage();
+    console.log(`\x1b[90m[Browser] Profile: ${userDataDir}\x1b[0m`);
 
     // Auto-accept dialogs (alert, confirm, prompt) and log them
     this.page.on("dialog", async (dialog) => {
@@ -420,8 +426,8 @@ export class BrowserController {
   // ── Lifecycle ───────────────────────────────────────────────
 
   async close(): Promise<void> {
-    if (this.browser) {
-      await this.browser.close();
+    if (this.context) {
+      await this.context.close();
       this.browser = null;
       this.context = null;
       this.page = null;

@@ -13,6 +13,7 @@ const TOOLS_DESC = `Available tools (respond with JSON to use):
 - hover: {"tool":"hover","args":{"element_id":N}} — hover over element
 - go_back: {"tool":"go_back","args":{}} — browser back
 - wait: {"tool":"wait","args":{"ms":2000}} — wait
+- query_dom: {"tool":"query_dom","args":{"query":"..."}} — ask sub-agent to analyze page DOM
 - ask_user: {"tool":"ask_user","args":{"question":"..."}} — ask user a question
 - task_complete: {"tool":"task_complete","args":{"summary":"..."}} — finish task with results`;
 
@@ -28,6 +29,13 @@ RULES:
 5. When you have the answer, call task_complete with results.
 6. Respond in the user's language.
 
+SECURITY — ALWAYS ask_user before:
+- Clicking payment/checkout/buy buttons
+- Deleting emails, files, or messages
+- Submitting forms with personal data
+- Any irreversible action
+Example: {"tool":"ask_user","args":{"question":"Подтвердите: удалить 3 письма-спама?"}}
+
 EXAMPLE:
 User: Find jobs on hh.ru
 You: {"tool":"navigate","args":{"url":"https://hh.ru"}}
@@ -39,6 +47,46 @@ You: {"tool":"press_key","args":{"key":"Enter"}}
 You: {"tool":"get_page_state","args":{}}
 [tool result: search results...]
 You: {"tool":"task_complete","args":{"summary":"Found 3 vacancies: ..."}}`;
+
+// ── Sub-agent prompts for specialized tasks ───────────────
+
+const SUB_AGENTS: Record<string, string> = {
+  search: `You specialize in SEARCH tasks. Strategy:
+1. Navigate to the search engine or website
+2. Find the search input field
+3. Type the query and press Enter
+4. Extract results from the page
+5. Return structured results via task_complete`,
+
+  email: `You specialize in EMAIL tasks. Strategy:
+1. Navigate to the email service (user is already logged in)
+2. Find the inbox/folder
+3. Read email subjects and senders
+4. For spam detection: look for promotional keywords, suspicious senders, phishing patterns
+5. SECURITY: Always ask_user before deleting any emails
+6. Report what was found/done via task_complete`,
+
+  shopping: `You specialize in SHOPPING/ORDERING tasks. Strategy:
+1. Navigate to the delivery/shopping service (user is already logged in)
+2. Use search to find the requested items
+3. Add items to cart
+4. Navigate to checkout
+5. SECURITY: STOP before payment — ask_user to confirm the order
+6. Report the order summary via task_complete`,
+
+  general: "",
+};
+
+function detectSubAgent(task: string): string {
+  const t = task.toLowerCase();
+  if (t.includes("почт") || t.includes("письм") || t.includes("спам") || t.includes("mail") || t.includes("email") || t.includes("inbox"))
+    return "email";
+  if (t.includes("заказ") || t.includes("купи") || t.includes("доставк") || t.includes("корзин") || t.includes("бургер") || t.includes("еда") || t.includes("order") || t.includes("delivery"))
+    return "shopping";
+  if (t.includes("найди") || t.includes("поиск") || t.includes("search") || t.includes("вакан") || t.includes("google"))
+    return "search";
+  return "general";
+}
 
 type AskUserFn = (question: string) => Promise<string>;
 
@@ -55,9 +103,15 @@ export class Agent {
   }
 
   async run(task: string): Promise<string> {
+    // Sub-agent detection
+    const agentType = detectSubAgent(task);
+    const subPrompt = SUB_AGENTS[agentType];
+    if (agentType !== "general") {
+      console.log(`\x1b[36m[Sub-agent] ${agentType}\x1b[0m`);
+    }
     console.log("\x1b[36m[Agent] Starting...\x1b[0m");
 
-    let context = `${SYSTEM_PROMPT}\n\nUser task: ${task}\n\nRespond with a JSON tool call now.`;
+    let context = `${SYSTEM_PROMPT}\n${subPrompt ? "\n" + subPrompt + "\n" : ""}\nUser task: ${task}\n\nRespond with a JSON tool call now.`;
 
     for (let step = 1; step <= this.maxSteps; step++) {
       console.log(`\x1b[90m── step ${step}/${this.maxSteps} ──\x1b[0m`);
@@ -118,6 +172,23 @@ export class Agent {
     }
 
     return `Max steps (${this.maxSteps}) reached.`;
+  }
+
+  /**
+   * query_dom sub-agent: sends page state + question to Claude for DOM analysis.
+   */
+  private async queryDom(query: string): Promise<string> {
+    console.log(`\x1b[36m  [DOM Sub-agent] Analyzing: ${query.substring(0, 60)}...\x1b[0m`);
+    const pageState = await this.browser.getPageState();
+    const prompt = `You are a DOM analysis sub-agent. Given the page state below, answer the user's question concisely.
+
+Page state:
+${pageState.substring(0, 8000)}
+
+Question: ${query}
+
+Answer concisely — element numbers, selectors, or factual info. No tool calls.`;
+    return this.callClaude(prompt);
   }
 
   private callClaude(prompt: string): string {
@@ -191,6 +262,7 @@ export class Agent {
         case "scroll": return await this.browser.scroll(args.direction, args.amount || 600);
         case "get_page_state": return await this.browser.getPageState();
         case "screenshot": return "Use get_page_state instead for text content.";
+        case "query_dom": return await this.queryDom(args.query);
         case "go_back": return await this.browser.goBack();
         case "wait": return await this.browser.wait(args.ms || 2000);
         case "switch_tab": return await this.browser.switchTab(args.tab_index);

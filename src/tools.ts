@@ -201,6 +201,22 @@ export const tools: Anthropic.Tool[] = [
     },
   },
   {
+    name: "query_dom",
+    description:
+      "Ask a question about the current page DOM. A sub-agent will analyze the page and answer your question. Use this to find specific elements, understand page structure, or check what changed.",
+    input_schema: {
+      type: "object" as const,
+      properties: {
+        query: {
+          type: "string",
+          description:
+            "Question about the page, e.g. 'Is there a search input? What is its element number?' or 'What items are in the cart?'",
+        },
+      },
+      required: ["query"],
+    },
+  },
+  {
     name: "task_complete",
     description:
       "Signal that the task has been completed. Call this when you have finished the user's request. Provide a clear summary of what was accomplished.",

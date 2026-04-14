@@ -242,8 +242,8 @@ export class BrowserController {
         .filter((line) => line.length > 0)
         .join("\n");
 
-      if (cleaned.length > 12000) {
-        return cleaned.substring(0, 12000) + "\n\n(Page text truncated at 12000 chars. Scroll down or use screenshot to see more.)";
+      if (cleaned.length > 4000) {
+        return cleaned.substring(0, 4000) + "\n\n(truncated)";
       }
       return cleaned;
     });
@@ -348,8 +348,9 @@ export class BrowserController {
       this.getInteractiveElements(),
     ]);
 
-    let state = `URL: ${url}\nTitle: ${title}\n\n`;
-    state += `=== Page Content ===\n${pageText}\n\n`;
+    // Keep page text short to avoid overwhelming local LLMs
+    const shortText = pageText.substring(0, 2000);
+    let state = `URL: ${url}\nTitle: ${title}\n\nPage text (short): ${shortText}\n\n`;
     state += `=== Interactive Elements (${elements.length}) ===\n`;
 
     for (const el of elements) {

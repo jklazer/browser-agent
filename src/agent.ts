@@ -58,8 +58,14 @@ async function refreshOAuthToken(): Promise<string | null> {
     }
 
     const data = await res.json() as any;
+    console.log(`\x1b[90m[Auth] Response keys: ${Object.keys(data).join(", ")}\x1b[0m`);
     const newToken = data.access_token;
-    if (!newToken) return null;
+    if (newToken) {
+      console.log(`\x1b[90m[Auth] Token prefix: ${newToken.substring(0, 20)}... (len=${newToken.length})\x1b[0m`);
+    } else {
+      console.log(`\x1b[31m[Auth] No access_token in response: ${JSON.stringify(data).substring(0, 200)}\x1b[0m`);
+      return null;
+    }
 
     // Save updated credentials back to file
     try {
@@ -165,11 +171,23 @@ export class Agent {
       },
     ];
 
-    // Refresh OAuth token before starting if using Claude subscription
+    // Only refresh OAuth token if it's expired or about to expire (< 5 min)
     if (this.useOAuth) {
-      const freshToken = await refreshOAuthToken();
-      if (freshToken) {
-        this.client = new Anthropic({ apiKey: freshToken });
+      const oauth = readClaudeOAuth();
+      const expiresIn = (oauth?.expiresAt ?? 0) - Date.now();
+      if (expiresIn < 5 * 60 * 1000) {
+        console.log("\x1b[33m[Auth] Токен истёк или истекает, обновляю...\x1b[0m");
+        const freshToken = await refreshOAuthToken();
+        if (freshToken) {
+          this.client = new Anthropic({ apiKey: freshToken });
+        }
+      } else {
+        // Re-read token from file (Claude Code may have refreshed it)
+        const currentToken = oauth?.accessToken;
+        if (currentToken) {
+          this.client = new Anthropic({ apiKey: currentToken });
+          console.log(`\x1b[36m[Auth] Токен валиден ещё ${Math.round(expiresIn / 60000)} мин.\x1b[0m`);
+        }
       }
     }
 

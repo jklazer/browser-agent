@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "tsx src/index.ts",
+    "go": "tsx src/wait-and-run.ts",
     "typecheck": "tsc --noEmit",
     "setup": "playwright install chromium"
   },

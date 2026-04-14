@@ -1,4 +1,0 @@
-[    5867ms] [LOG] Error: TargetAds Queue is empty @ https://i.hh.ru/js/External/TargetAds_WebSDK.js?v=2:0
-[    6598ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
-[    6602ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
-[    7075ms] [ERROR] Failed to load resource: net::ERR_HTTP2_SERVER_REFUSED_STREAM @ https://bobid-ip.hybrid.ai/:0

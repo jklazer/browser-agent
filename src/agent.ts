@@ -5,19 +5,79 @@ import { homedir } from "os";
 import { BrowserController } from "./browser.js";
 import { tools } from "./tools.js";
 
-/**
- * Try to read the OAuth token from the Claude Code subscription.
- * File: ~/.claude/.credentials.json → claudeAiOauth.accessToken
- */
-function readClaudeOAuthToken(): string | null {
+const CLAUDE_OAUTH_CLIENT_ID = "9d1c250a-e61b-44d9-88ed-5944d1962f5e";
+const CLAUDE_TOKEN_URL = "https://console.anthropic.com/v1/oauth/token";
+
+interface ClaudeOAuthCreds {
+  accessToken: string;
+  refreshToken: string;
+  expiresAt: number;
+}
+
+function getCredentialsPath(): string {
+  return join(homedir(), ".claude", ".credentials.json");
+}
+
+/** Read OAuth credentials from Claude Code's credentials file. */
+function readClaudeOAuth(): ClaudeOAuthCreds | null {
   try {
-    const credPath = join(homedir(), ".claude", ".credentials.json");
-    const raw = readFileSync(credPath, "utf-8");
+    const raw = readFileSync(getCredentialsPath(), "utf-8");
     const creds = JSON.parse(raw);
-    const token = creds?.claudeAiOauth?.accessToken;
-    if (token && typeof token === "string") return token;
+    const oauth = creds?.claudeAiOauth;
+    if (oauth?.accessToken && oauth?.refreshToken) return oauth;
   } catch {}
   return null;
+}
+
+/** Read just the access token (backward compat). */
+function readClaudeOAuthToken(): string | null {
+  return readClaudeOAuth()?.accessToken ?? null;
+}
+
+/** Refresh the OAuth access token using the refresh token, and save to credentials file. */
+async function refreshOAuthToken(): Promise<string | null> {
+  const oauth = readClaudeOAuth();
+  if (!oauth?.refreshToken) return null;
+
+  console.log("\x1b[36m[Auth] Обновление OAuth-токена...\x1b[0m");
+  try {
+    const res = await fetch(CLAUDE_TOKEN_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        grant_type: "refresh_token",
+        client_id: CLAUDE_OAUTH_CLIENT_ID,
+        refresh_token: oauth.refreshToken,
+      }),
+    });
+
+    if (!res.ok) {
+      const body = await res.text();
+      console.log(`\x1b[31m[Auth] Refresh failed: ${res.status} ${body.substring(0, 100)}\x1b[0m`);
+      return null;
+    }
+
+    const data = await res.json() as any;
+    const newToken = data.access_token;
+    if (!newToken) return null;
+
+    // Save updated credentials back to file
+    try {
+      const raw = readFileSync(getCredentialsPath(), "utf-8");
+      const creds = JSON.parse(raw);
+      creds.claudeAiOauth.accessToken = newToken;
+      if (data.refresh_token) creds.claudeAiOauth.refreshToken = data.refresh_token;
+      if (data.expires_in) creds.claudeAiOauth.expiresAt = Date.now() + data.expires_in * 1000;
+      const { writeFileSync } = await import("fs");
+      writeFileSync(getCredentialsPath(), JSON.stringify(creds));
+    } catch {}
+
+    console.log("\x1b[32m[Auth] Токен обновлён!\x1b[0m");
+    return newToken;
+  } catch (err: any) {
+    console.log(`\x1b[31m[Auth] Refresh error: ${err.message}\x1b[0m`);
+    return null;
+  }
 }
 
 const SYSTEM_PROMPT = `You are an autonomous browser automation agent. You control a real web browser to complete tasks given by the user. You think and act step by step.
@@ -63,6 +123,7 @@ export class Agent {
   private askUser: AskUserFn;
   private model: string;
   private maxSteps: number;
+  private useOAuth: boolean = false;
 
   constructor(browser: BrowserController, askUser: AskUserFn) {
     const opts: ConstructorParameters<typeof Anthropic>[0] = {};
@@ -78,6 +139,7 @@ export class Agent {
       const oauthToken = readClaudeOAuthToken();
       if (oauthToken) {
         opts.apiKey = oauthToken;
+        this.useOAuth = true;
         console.log(
           "\x1b[36m[Auth] Используется OAuth-токен подписки Claude Code.\x1b[0m"
         );
@@ -102,6 +164,14 @@ export class Agent {
         content: `Task: ${task}\n\nStart by navigating to the appropriate website or calling get_page_state to see the current page. Work step by step until the task is complete.`,
       },
     ];
+
+    // Refresh OAuth token before starting if using Claude subscription
+    if (this.useOAuth) {
+      const freshToken = await refreshOAuthToken();
+      if (freshToken) {
+        this.client = new Anthropic({ apiKey: freshToken });
+      }
+    }
 
     console.log("\x1b[36m[Agent] Starting task execution...\x1b[0m");
 
@@ -289,7 +359,7 @@ export class Agent {
    * Call the Anthropic API with retry + exponential backoff for 429 rate limits.
    */
   private async callAPI(): Promise<Anthropic.Message> {
-    const maxRetries = 5;
+    const maxRetries = 8;
     for (let attempt = 0; attempt < maxRetries; attempt++) {
       try {
         return await this.client.messages.create({
@@ -301,10 +371,22 @@ export class Agent {
         });
       } catch (err: any) {
         const status = err?.status || err?.error?.status;
+
+        // 401 = token expired → try refreshing
+        if (status === 401 && this.useOAuth && attempt < 2) {
+          console.log("\x1b[33m  [Auth] Токен истёк, обновляю...\x1b[0m");
+          const freshToken = await refreshOAuthToken();
+          if (freshToken) {
+            this.client = new Anthropic({ apiKey: freshToken });
+            continue;
+          }
+        }
+
+        // 429 = rate limit → wait and retry
         if (status === 429 && attempt < maxRetries - 1) {
-          const delay = Math.min(2000 * Math.pow(2, attempt), 30000);
+          const delay = Math.min(5000 * Math.pow(2, attempt), 60000);
           console.log(
-            `\x1b[33m  [Rate limit] Retry ${attempt + 1}/${maxRetries} in ${(delay / 1000).toFixed(0)}s...\x1b[0m`
+            `\x1b[33m  [Rate limit] Retry ${attempt + 1}/${maxRetries} in ${(delay / 1000).toFixed(0)}s... (убедитесь что Claude Code закрыт)\x1b[0m`
           );
           await new Promise((r) => setTimeout(r, delay));
           continue;

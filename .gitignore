@@ -5,3 +5,4 @@ dist/
 *.jpg
 .playwright-mcp/
 .env
+search_results.md

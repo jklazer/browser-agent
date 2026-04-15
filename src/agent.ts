@@ -108,6 +108,7 @@ export class Agent {
           const delay = Math.min(5000 * Math.pow(2, step % 5), 30000);
           console.log(`\x1b[33m  [429] Retry in ${(delay / 1000).toFixed(0)}s\x1b[0m`);
           await new Promise((r) => setTimeout(r, delay));
+          step--; // Don't count rate-limited iterations
           continue;
         }
         throw err;
@@ -141,6 +142,21 @@ export class Agent {
           continue;
         }
 
+        // Screenshot → send as image content block so Claude can see it
+        if (tc.name === "screenshot") {
+          const b64 = await this.browser.screenshot();
+          toolResults.push({
+            type: "tool_result",
+            tool_use_id: tc.id,
+            content: [
+              { type: "image", source: { type: "base64", media_type: "image/png", data: b64 } },
+              { type: "text", text: "Screenshot of current browser viewport." },
+            ],
+          });
+          console.log(`\x1b[90m    (screenshot ${(b64.length / 1024).toFixed(0)}KB)\x1b[0m`);
+          continue;
+        }
+
         const result = await this.executeTool(tc.name, input);
         toolResults.push({
           type: "tool_result",
@@ -155,9 +171,16 @@ export class Agent {
   }
 
   private trimAPIMessages(): void {
-    const first = this.messages[0];
+    const first = this.messages[0]; // user
     const recent = this.messages.slice(-20);
-    this.messages = [first, { role: "assistant", content: [{ type: "text", text: "(trimmed)" }] }, ...recent];
+    // Ensure alternation: find first user message in recent
+    const startIdx = recent.findIndex((m) => m.role === "user");
+    const trimmedRecent = startIdx >= 0 ? recent.slice(startIdx) : recent;
+    this.messages = [
+      first,
+      { role: "assistant", content: [{ type: "text", text: "(earlier conversation trimmed)" }] },
+      ...trimmedRecent,
+    ];
   }
 
   // ── CLI mode (free, uses claude -p) ─────────────────────────
@@ -170,8 +193,11 @@ export class Agent {
 - press_key: {"tool":"press_key","args":{"key":"Enter"}}
 - scroll: {"tool":"scroll","args":{"direction":"down"}}
 - get_page_state: {"tool":"get_page_state","args":{}}
+- screenshot: {"tool":"screenshot","args":{}}
 - hover: {"tool":"hover","args":{"element_id":N}}
+- select_option: {"tool":"select_option","args":{"element_id":N,"value":"..."}}
 - query_dom: {"tool":"query_dom","args":{"query":"..."}}
+- switch_tab: {"tool":"switch_tab","args":{"tab_index":N}}
 - go_back: {"tool":"go_back","args":{}}
 - wait: {"tool":"wait","args":{"ms":2000}}
 - ask_user: {"tool":"ask_user","args":{"question":"..."}}

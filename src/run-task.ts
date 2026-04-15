@@ -28,6 +28,7 @@ async function main() {
   const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
   const askUser = (q: string): Promise<string> =>
     new Promise((resolve) => {
+      if ((rl as any).closed) { resolve("(user unavailable)"); return; }
       rl.question(`\n${C.yellow}[Agent asks] ${q}${C.reset}\n> `, resolve);
     });
 

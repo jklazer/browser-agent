@@ -1,4 +1,7 @@
-import { chromium, Browser, BrowserContext, Page } from "playwright";
+import { chromium, BrowserContext, Page } from "playwright";
+import { join } from "path";
+import { homedir } from "os";
+import { mkdirSync } from "fs";
 
 export interface InteractiveElement {
   id: number;
@@ -14,15 +17,11 @@ export interface InteractiveElement {
 }
 
 export class BrowserController {
-  private browser: Browser | null = null;
   private context: BrowserContext | null = null;
   private page: Page | null = null;
 
   async launch(): Promise<void> {
     // Persistent session: use userDataDir so logins survive between runs
-    const { join } = await import("path");
-    const { homedir } = await import("os");
-    const { mkdirSync } = await import("fs");
     const userDataDir = process.env.BROWSER_DATA_DIR || join(homedir(), ".browser-agent", "chromium-profile");
     mkdirSync(userDataDir, { recursive: true });
 
@@ -42,7 +41,7 @@ export class BrowserController {
       console.log(
         `\x1b[33m  [dialog] ${dialog.type()}: ${dialog.message()}\x1b[0m`
       );
-      await dialog.accept();
+      await dialog.accept().catch(() => {});
     });
 
     // Track new tabs
@@ -248,9 +247,6 @@ export class BrowserController {
         .filter((line) => line.length > 0)
         .join("\n");
 
-      if (cleaned.length > 4000) {
-        return cleaned.substring(0, 4000) + "\n\n(truncated)";
-      }
       return cleaned;
     });
     return text;
@@ -281,6 +277,9 @@ export class BrowserController {
         "summary",
         "label[for]",
       ];
+
+      // Clean up old data-agent-id attributes to prevent ghost selectors
+      document.querySelectorAll("[data-agent-id]").forEach((el) => el.removeAttribute("data-agent-id"));
 
       const allEls = document.querySelectorAll(selectors.join(", "));
       const results: any[] = [];
@@ -428,7 +427,6 @@ export class BrowserController {
   async close(): Promise<void> {
     if (this.context) {
       await this.context.close();
-      this.browser = null;
       this.context = null;
       this.page = null;
     }

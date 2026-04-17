@@ -6,3 +6,4 @@ dist/
 .playwright-mcp/
 .env
 search_results.md
+logs/

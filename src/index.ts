@@ -63,6 +63,9 @@ async function main() {
 
   const askUser = async (question: string): Promise<string> => {
     console.log(`\n${C.yellow}[Агент спрашивает] ${question}${C.reset}`);
+    if ((rl as any).closed || !process.stdin.readable) {
+      return "NO — aborted. stdin is closed. Do NOT perform destructive actions. Call task_complete with 'aborted: user unavailable'.";
+    }
     return await prompt(`${C.yellow}> ${C.reset}`);
   };
 
@@ -86,7 +89,10 @@ async function main() {
   const shutdown = async () => {
     if (isShuttingDown) return;
     isShuttingDown = true;
-    console.log(`\n${C.cyan}Закрытие браузера...${C.reset}`);
+    console.log(`\n${C.cyan}Прерывание агента...${C.reset}`);
+    agent.abort();
+    await new Promise((r) => setTimeout(r, 500));
+    console.log(`${C.cyan}Закрытие браузера...${C.reset}`);
     await browser.close().catch(() => {});
     rl.close();
     console.log("До свидания!");
@@ -111,11 +117,13 @@ async function main() {
     console.log();
     const startTime = Date.now();
     try {
-      const result = await agent.run(trimmed);
+      const { result, logFile, usage } = await agent.run(trimmed);
       const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
       console.log(`\n${C.green}${C.bold}═══ Результат ═══${C.reset}`);
       console.log(result);
-      console.log(`${C.green}═════════════════${C.reset} ${C.gray}(${elapsed}s)${C.reset}\n`);
+      console.log(`${C.green}═════════════════${C.reset}`);
+      console.log(`${C.gray}Время: ${elapsed}s | ${usage}${C.reset}`);
+      console.log(`${C.gray}Log: ${logFile}${C.reset}\n`);
     } catch (err: any) {
       console.error(`\n${C.red}Ошибка: ${err.message}${C.reset}\n`);
     }

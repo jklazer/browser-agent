@@ -1,9 +1,10 @@
 /**
- * Run a single task with the AI agent.
- * Usage: npx tsx src/run-task.ts "Найди 3 вакансии AI-инженера на hh.ru"
+ * Run a task with ask_user auto-answering YES.
+ * WARNING: bypasses interactive confirmation — code-level safety guards still
+ * apply only insofar as the user's YES "allows" bulk actions. Use only when
+ * destructive actions are explicitly pre-authorized by the user.
  */
 import "dotenv/config";
-import * as readline from "readline";
 import { BrowserController } from "./browser.js";
 import { Agent } from "./agent.js";
 
@@ -20,44 +21,35 @@ const C = {
 async function main() {
   const task = process.argv.slice(2).join(" ");
   if (!task) {
-    console.error(`${C.red}Usage: npx tsx src/run-task.ts "Your task here"${C.reset}`);
+    console.error(`${C.red}Usage: npx tsx src/run-task-auto.ts "Your task"${C.reset}`);
     process.exit(1);
   }
+  console.log(`${C.cyan}${C.bold}Task: ${task}${C.reset}`);
+  console.log(
+    `${C.yellow}⚠️  AUTO-YES MODE — all ask_user prompts auto-answer YES.${C.reset}\n`
+  );
 
-  console.log(`${C.cyan}${C.bold}Task: ${task}${C.reset}\n`);
-
-  const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
-  const STDIN_CLOSED_NO =
-    "NO — aborted. stdin is closed and the user cannot respond. Do NOT perform destructive or irreversible actions. Call task_complete with summary 'aborted: user unavailable'.";
-  const askUser = (q: string): Promise<string> =>
-    new Promise((resolve) => {
-      if ((rl as any).closed || !process.stdin.readable) {
-        resolve(STDIN_CLOSED_NO);
-        return;
-      }
-      rl.question(`\n${C.yellow}[Agent asks] ${q}${C.reset}\n> `, (answer) => {
-        resolve(answer);
-      });
-      // If stdin closes while we're waiting (e.g. pipe EOF), resolve with NO
-      process.stdin.once("end", () => resolve(STDIN_CLOSED_NO));
-    });
+  const askUser = async (q: string): Promise<string> => {
+    console.log(`\n${C.yellow}[Agent asks] ${q}${C.reset}`);
+    console.log(`${C.green}[auto-YES]${C.reset}`);
+    return "YES";
+  };
 
   console.log(`${C.cyan}Launching browser...${C.reset}`);
   const browser = new BrowserController();
   await browser.launch();
-  console.log(`${C.green}Browser launched!${C.reset}\n`);
+  console.log(`${C.green}Browser launched.${C.reset}\n`);
 
   const agent = new Agent(browser, askUser);
-  let isShuttingDown = false;
 
+  let isShuttingDown = false;
   const shutdown = async () => {
     if (isShuttingDown) return;
     isShuttingDown = true;
     console.log(`\n${C.yellow}Aborting...${C.reset}`);
     agent.abort();
-    await new Promise((r) => setTimeout(r, 1000));
+    await new Promise((r) => setTimeout(r, 800));
     await browser.close().catch(() => {});
-    rl.close();
     process.exit(0);
   };
   process.on("SIGINT", shutdown);
@@ -75,9 +67,7 @@ async function main() {
     console.error(`\n${C.red}Error: ${err.message}${C.reset}`);
   }
 
-  isShuttingDown = true;
   await browser.close();
-  rl.close();
   process.exit(0);
 }
 

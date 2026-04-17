@@ -14,11 +14,13 @@ export interface InteractiveElement {
   value: string;
   checked: boolean;
   disabled: boolean;
+  inViewport: boolean;
 }
 
 export class BrowserController {
   private context: BrowserContext | null = null;
   private page: Page | null = null;
+  private lastElements: InteractiveElement[] = [];
 
   async launch(): Promise<void> {
     // Persistent session: use userDataDir so logins survive between runs
@@ -256,7 +258,7 @@ export class BrowserController {
     const page = this.activePage;
 
     const elements: InteractiveElement[] = await page.evaluate(() => {
-      const selectors = [
+      const SELECTOR_LIST = [
         "a[href]",
         "button",
         'input:not([type="hidden"])',
@@ -276,21 +278,42 @@ export class BrowserController {
         '[contenteditable="true"]',
         "summary",
         "label[for]",
-      ];
+      ].join(", ");
 
-      // Clean up old data-agent-id attributes to prevent ghost selectors
-      document.querySelectorAll("[data-agent-id]").forEach((el) => el.removeAttribute("data-agent-id"));
+      // Iterative traversal: document + open shadow roots (avoids tsx/esbuild
+      // __name helper injection that breaks inside page.evaluate).
+      const roots: (Document | ShadowRoot)[] = [document];
+      for (let i = 0; i < roots.length; i++) {
+        const root = roots[i];
+        const all = root.querySelectorAll("*");
+        for (let j = 0; j < all.length; j++) {
+          const sr = (all[j] as HTMLElement).shadowRoot;
+          if (sr) roots.push(sr);
+        }
+      }
 
-      const allEls = document.querySelectorAll(selectors.join(", "));
+      // Clear stale data-agent-id across all roots
+      for (const root of roots) {
+        const tagged = root.querySelectorAll("[data-agent-id]");
+        for (let j = 0; j < tagged.length; j++) tagged[j].removeAttribute("data-agent-id");
+      }
+
+      // Collect matching elements across all roots
+      const collected: HTMLElement[] = [];
+      for (const root of roots) {
+        const matches = root.querySelectorAll(SELECTOR_LIST);
+        for (let j = 0; j < matches.length; j++) collected.push(matches[j] as HTMLElement);
+      }
+
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
       const results: any[] = [];
       let id = 0;
       const seen = new Set<Element>();
 
-      for (const el of allEls) {
-        if (seen.has(el)) continue;
-        seen.add(el);
-
-        const htmlEl = el as HTMLElement;
+      for (const htmlEl of collected) {
+        if (seen.has(htmlEl)) continue;
+        seen.add(htmlEl);
 
         // Visibility checks
         const rect = htmlEl.getBoundingClientRect();
@@ -298,13 +321,17 @@ export class BrowserController {
         const style = window.getComputedStyle(htmlEl);
         if (style.display === "none" || style.visibility === "hidden") continue;
         if (parseFloat(style.opacity) === 0) continue;
+        if (style.pointerEvents === "none") continue;
+
+        // Off-screen marker (still returned, agent scrolls if needed)
+        const inViewport = rect.bottom > 0 && rect.top < vh && rect.right > 0 && rect.left < vw;
 
         // Tag data-agent-id for targeting
         htmlEl.setAttribute("data-agent-id", String(id));
 
         const tag = htmlEl.tagName.toLowerCase();
         const innerText = (htmlEl.innerText || htmlEl.textContent || "").trim();
-        const text = innerText.substring(0, 80);
+        const text = innerText.substring(0, 120);
         const ariaLabel = htmlEl.getAttribute("aria-label") || "";
         const placeholder = (htmlEl as HTMLInputElement).placeholder || "";
         const href = (htmlEl as HTMLAnchorElement).href || "";
@@ -331,6 +358,7 @@ export class BrowserController {
             : "",
           checked: !!(htmlEl as HTMLInputElement).checked,
           disabled: !!(htmlEl as HTMLInputElement).disabled,
+          inViewport,
         });
 
         id++;
@@ -340,7 +368,13 @@ export class BrowserController {
       return results;
     });
 
+    this.lastElements = elements;
     return elements;
+  }
+
+  /** Returns cached info for the last-extracted element by id. Used by safety guards. */
+  getElementInfo(id: number): InteractiveElement | null {
+    return this.lastElements.find((e) => e.id === id) || null;
   }
 
   async getPageState(): Promise<string> {
@@ -374,6 +408,7 @@ export class BrowserController {
       if (el.value) desc += ` value="${el.value}"`;
       if (el.checked) desc += ` [checked]`;
       if (el.disabled) desc += ` [disabled]`;
+      if (!el.inViewport) desc += ` [off-screen]`;
       state += desc + "\n";
     }
 
@@ -383,6 +418,12 @@ export class BrowserController {
     if (elements.length >= 200) {
       state +=
         "\n(Element list was truncated at 200. Scroll or navigate to see more.)\n";
+    }
+
+    // Report iframes presence (their inner DOM is not extracted — agent should know)
+    const iframeCount = await page.evaluate(() => document.querySelectorAll("iframe").length);
+    if (iframeCount > 0) {
+      state += `\n(Page contains ${iframeCount} iframe(s). Elements inside iframes are NOT listed — use query_dom or screenshot if needed.)\n`;
     }
 
     return state;
